@@ -1,0 +1,67 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header" style="padding-bottom: 5px !important">
+                    <div >
+                        <h5 class="pb-2">مستخدم جديد</h5>
+
+                       <span> يرجى ملئ جميع الخانات </span>
+                    </div>
+                    <ng-template >
+                        
+                    </ng-template>
+                </div>
+                <div class="card-body">
+                    <form class="needs-validation" autocomplete="off" 
+                    [formGroup] = "userForm"
+                    (ngSubmit)="onSubmit()" 
+                    novalidate>
+                        <div class="form-row">
+                            <!-- Name  -->
+                            <div class="col-6 mb-3">
+                                <label for="validation01"><span class="validation-required">*</span> اسم المستخدم</label>
+                                <input class="form-control" id="validation01" type="text" formControlName="Name"
+                                [tooltip]="fc.Name.errors?.required ? 'الحقل مطلوب' : null"
+                                [class.is-valid]="fc.Name.valid && (fc.Name.touched)"
+                                [class.is-invalid]="fc.Name.invalid && (fc.Name.touched)"
+                                
+                                     required
+                                     placeholder="اسم المستخدم"
+                                    containerClass="" />
+                            </div>
+                            <!-- title  -->
+                            <div class="col-6 mb-3">
+                                <label for="validation01"><span class="validation-required">*</span> الرقم السري</label>
+                                <input class="form-control" id="validation01" type="text" formControlName="Password"
+                                [tooltip]="fc.Password.errors?.required ? 'الحقل مطلوب' : null"
+                                [class.is-valid]="fc.Password.valid && (fc.Password.touched)"
+                                [class.is-invalid]="fc.Password.invalid && (fc.Password.touched)"
+                                onlyNumbers
+                                     required
+                                     placeholder="********"
+                                    containerClass="" />
+                            </div>
+                           
+                        </div>
+
+                        <br>
+                        <ng-template #elseBlock>
+                            <button [disabled]="button" class="btn pull-right" type="submit">
+                               اضافة
+                            </button>
+                            </ng-template>
+                        <div *ngIf="update; else elseBlock">
+                            <button class="btn pull-right" type="submit">
+                                تعديل
+                            </button>
+                       </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

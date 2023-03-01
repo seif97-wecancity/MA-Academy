@@ -1,0 +1,88 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header" style="padding-bottom: 5px !important">
+                    <div >
+                        <h5 class="pb-2">مدرس جديد</h5>
+
+                       <span> يرجى ملئ جميع الخانات </span>
+                    </div>
+                    <ng-template >
+                        
+                    </ng-template>
+                </div>
+                <div class="card-body">
+                    <form class="needs-validation" autocomplete="off" 
+                    [formGroup] = "TeacherForm"
+                    (ngSubmit)="onSubmit()" 
+                    novalidate>
+                        <div class="form-row">
+                            <!-- Name  -->
+                            <div class="col-6 mb-3">
+                                <label for="validation01"><span class="validation-required">*</span> اسم المدرس</label>
+                                <input class="form-control" id="validation01" type="text" formControlName="Name"
+                                [tooltip]="fc.Name.errors?.required ? 'الحقل مطلوب' : null"
+                                [class.is-valid]="fc.Name.valid && (fc.Name.touched)"
+                                [class.is-invalid]="fc.Name.invalid && (fc.Name.touched)"
+                                
+                                     required
+                                     placeholder="الأسم"
+                                    containerClass="" />
+                            </div>
+                            <!-- title  -->
+                            <div class="col-6 mb-3">
+                                <label for="validation01"><span class="validation-required">*</span> اسم المادة</label>
+                                <input class="form-control" id="validation01" type="text" formControlName="Course"
+                                [tooltip]="fc.Course.errors?.required ? 'الحقل مطلوب' : null"
+                                [class.is-valid]="fc.Course.valid && (fc.Course.touched)"
+                                [class.is-invalid]="fc.Course.invalid && (fc.Course.touched)"
+                                
+                                     required
+                                     placeholder="اسم المادة"
+                                    containerClass="" />
+                            </div>
+                                                                     <!-- select keyword -->
+                     <div class="col-lg-6 col-sm-12  mb-3" style="margin-top: 7px;">
+                        <label for="validationCustom06">  اسم المادة او المواد</label>
+                        <ng-multiselect-dropdown
+                               formControlName=""
+                               [placeholder]="'اختر من القائمة'"
+                               [settings]="dropdownSettings"
+                               [data]="data"
+                               [(ngModel)]="selectedItems">
+                        </ng-multiselect-dropdown>
+                    </div>
+                        <!-- to insert image  -->
+              <div class="col-6 my-3" style="padding: 1.5%;">
+                <img  src="{{ imageLogo }}" style="width: 60%; height: 220px;" class="image-style p-2" *ngIf="imageLogo != null"/>
+               <input type="file" formControlName="Photo" accept="image/*" #file id="getLogo"
+                style="display: none" (change)="getLogoUrl($event)" />
+            <button type="button" onclick="document.getElementById('getLogo').click()"
+                class="btn d-block"  style="width: 60%;">
+                 صورة شخصية للمدرس
+            </button>    
+                        </div>
+                           
+                        </div>
+
+                        <br>
+                        <ng-template #elseBlock>
+                            <button [disabled]="button" class="btn pull-right" type="submit">
+                               حفظ
+                            </button>
+                            </ng-template>
+                        <div *ngIf="update; else elseBlock">
+                            <button class="btn pull-right" type="submit">
+                                تعديل
+                            </button>
+                       </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
