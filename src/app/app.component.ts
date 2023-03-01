@@ -1,4 +1,4 @@
-import { Component, PLATFORM_ID, Inject } from "@angular/core";
+import { Component, PLATFORM_ID, Inject, ViewEncapsulation } from "@angular/core";
 import { isPlatformBrowser } from "@angular/common";
 import { LoadingBarService } from "@ngx-loading-bar/core";
 import { map, delay, withLatestFrom } from "rxjs/operators";
@@ -8,6 +8,8 @@ import { TranslateService } from "@ngx-translate/core";
   selector: "app-root",
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.scss"],
+  encapsulation: ViewEncapsulation.None
+
 })
 export class AppComponent {
 

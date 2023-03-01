@@ -87,7 +87,12 @@ button{
     cursor:pointer;
     transition:transform .2s;
 }
-
+._caret{
+    left: 1px !important;
+}
+.dropdown-multiselect__caret{
+    left:1px !important;    
+}
 ._select {
     display: inline-block;
     /* width: 100%; */
