@@ -6,7 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./view-teachers.component.css']
 })
 export class ViewTeachersComponent implements OnInit {
-teachers:any = [];
+teachers:any = [
+  {name:'seif', pri:'one' ,sub:'رياضيات'},
+  {name:'eman', pri:'two' ,sub:'علوم'},
+  {name:'sa3eed', pri:'three' ,sub:'تاريخ'},
+];
 
 
   constructor() { }

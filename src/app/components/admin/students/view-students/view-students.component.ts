@@ -14,15 +14,6 @@ students:any [];
   }
 
 
-getstudents(){
-  this._StudentsService.Get().subscribe((res) => {
-    this.students = res.data;
-    
-  },(err) => {
-    console.log('their is a problem');
-    
-  })
-}
 
   delete(id : number){
 

@@ -18,7 +18,7 @@
                     (ngSubmit)="onSubmit()" 
                     novalidate>
                         <div class="form-row">
-                            <!-- Name  -->
+                            <!-- Teacher Name  -->
                             <div class="col-6 mb-3">
                                 <label for="validation01"><span class="validation-required">*</span> اسم المدرس</label>
                                 <input class="form-control" id="validation01" type="text" formControlName="Name"
@@ -30,7 +30,7 @@
                                      placeholder="الأسم"
                                     containerClass="" />
                             </div>
-                            <!-- title  -->
+                            <!-- subject name  -->
                             <div class="col-6 mb-3">
                                 <label for="validation01"><span class="validation-required">*</span> اسم المادة</label>
                                 <input class="form-control" id="validation01" type="text" formControlName="Course"
@@ -42,9 +42,9 @@
                                      placeholder="اسم المادة"
                                     containerClass="" />
                             </div>
-                                                                     <!-- select keyword -->
+                                                                     <!-- select subjects -->
                      <div class="col-lg-6 col-sm-12  mb-3" style="margin-top: 7px;">
-                        <label for="validationCustom06">  اسم المادة او المواد</label>
+                        <label for="validationCustom06"><span class="validation-required">*</span> اسم المادة او المواد</label>
                         <ng-multiselect-dropdown
                                formControlName=""
                                [placeholder]="'اختر من القائمة'"
@@ -53,7 +53,7 @@
                                [(ngModel)]="selectedItems">
                         </ng-multiselect-dropdown>
                     </div>
-                        <!-- to insert image  -->
+                        <!-- to insert image of the teacher  -->
               <div class="col-6 my-3" style="padding: 1.5%;">
                 <img  src="{{ imageLogo }}" style="width: 60%; height: 220px;" class="image-style p-2" *ngIf="imageLogo != null"/>
                <input type="file" formControlName="Photo" accept="image/*" #file id="getLogo"

@@ -40,7 +40,6 @@ QrCode:string = null;
       reader.readAsDataURL(file);
       reader.onload = () => {
         this.imageLogo = reader.result as string;
-        // this.logoForm?.append("image", this.Image);
       };
     }
   }
@@ -49,6 +48,21 @@ QrCode:string = null;
   }
   
   onSubmit(){
-
+    this.button = true;
+    if(this.CourseForm.status == "Valid"){
+      Swal.fire({
+        icon: "success",
+        title: "تم تسجيل الكورس بنجاح",
+        showConfirmButton: false,
+        timer: 1500,
+      }); 
+    }else{
+      this.button = false;
+      Swal.fire({
+        icon: 'error',
+        title: 'خطأ',
+        text: 'تأكد من ملئ جميع الخانات',
+      });  
+    }
   }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormGroup,FormBuilder, Validators } from '@angular/forms';
 import { IDropdownSettings, } from 'ng-multiselect-dropdown';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-insert-teachers',
@@ -55,6 +56,21 @@ data:any [];
 
 
   onSubmit(){
-
+    this.button = true;
+    if(this.TeacherForm.status == "Valid"){
+      Swal.fire({
+        icon: "success",
+        title: "تم تسجيل المدرس بنجاح",
+        showConfirmButton: false,
+        timer: 1500,
+      }); 
+    }else{
+      this.button = false;
+      Swal.fire({
+        icon: 'error',
+        title: 'خطأ',
+        text: 'تأكد من ملئ جميع الخانات',
+      });  
+    }
   }
 }

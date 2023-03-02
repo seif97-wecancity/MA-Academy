@@ -46,6 +46,21 @@ button:boolean = false
   }
   
  onSubmit(){
-  
+  this.button = true;
+  if(this.StudentForm.status == "Valid"){
+    Swal.fire({
+      icon: "success",
+      title: "تم تسجيل الطالب بنجاح",
+      showConfirmButton: false,
+      timer: 1500,
+    }); 
+  }else{
+    this.button = false;
+    Swal.fire({
+      icon: 'error',
+      title: 'خطأ',
+      text: 'تأكد من ملئ جميع الخانات',
+    });  
+  }
  }
 }

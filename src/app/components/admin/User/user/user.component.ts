@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-user',
@@ -28,6 +29,21 @@ button:boolean = false;
   }
 
   onSubmit(){
-
+    this.button = true;
+    if(this.userForm.status == "Valid"){
+      Swal.fire({
+        icon: "success",
+        title: "تم تسجيل الطالب بنجاح",
+        showConfirmButton: false,
+        timer: 1500,
+      }); 
+    }else{
+      this.button = false;
+      Swal.fire({
+        icon: 'error',
+        title: 'خطأ',
+        text: 'تأكد من ملئ جميع الخانات',
+      });  
+    }
   }
 }
