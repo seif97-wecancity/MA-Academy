@@ -14,7 +14,7 @@ export class LayoutService {
     },
     color: {
       primary_color: "#6870EC",
-      secondary_color: "#ED765D",
+      secondary_color: "#ED7621",
     },
   };
 

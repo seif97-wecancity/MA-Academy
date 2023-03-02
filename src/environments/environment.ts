@@ -9,6 +9,7 @@ export const environment = {
  
 };
 export const Server_URL='https://alandalusbimexdevapi.wecancity.com/api'
+// export const Server_URL='https://www.bazoka.eraasoft.com/api'
 
 /*
  * For easier debugging in development mode, you can import the following file
