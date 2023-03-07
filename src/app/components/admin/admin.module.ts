@@ -39,6 +39,7 @@ import { InsertCoursesComponent } from './courses/insert-courses/insert-courses.
 import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
 import { UserComponent } from './User/user/user.component';
 import { ChangePasswordComponent } from './User/change-password/change-password.component';
+import { CourseContentComponent } from './course-content/course-content.component';
 
  @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { ChangePasswordComponent } from './User/change-password/change-password.
     InsertCoursesComponent,
     UserComponent,
     ChangePasswordComponent,
+    CourseContentComponent,
    
     
   ],

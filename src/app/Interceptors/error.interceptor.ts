@@ -42,11 +42,11 @@ export class ErrorInterceptor implements HttpInterceptor {
               };
               break;
             default:
-              Swal.fire({
-                icon: "error",
-                title: "خطاء ",
-                text: 'something unexpected happened',
-              });
+              // Swal.fire({
+              //   icon: "error",
+              //   title: "خطاء ",
+              //   text: 'something unexpected happened',
+              // });
               break;
           }
         }

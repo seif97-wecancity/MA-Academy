@@ -4,7 +4,7 @@
             <div class="card">
                 <div class="card-header" style="padding-bottom: 5px !important">
                     <div >
-                        <h5 class="pb-2">طالب جديد</h5>
+                        <h5 class="pb-2">كورس جديد</h5>
 
                        <span> يرجى ملئ جميع الخانات </span>
                     </div>
@@ -21,17 +21,16 @@
                             <!-- Name  -->
                             <div class="col-6 mb-3">
                                 <label for="validation01"><span class="validation-required">*</span> اسم الكورس</label>
-                                <input class="form-control" id="validation01" type="text" formControlName="Name"
-                                [tooltip]="fc.Name.errors?.required ? 'الحقل مطلوب' : null"
-                                [class.is-valid]="fc.Name.valid && (fc.Name.touched)"
-                                [class.is-invalid]="fc.Name.invalid && (fc.Name.touched)"
-                                
+                                <input class="form-control" id="validation01" type="text" formControlName="name"
+                                [tooltip]="fc.name.errors?.required ? 'الحقل مطلوب' : null"
+                                [class.is-valid]="fc.name.valid && (fc.name.touched)"
+                                [class.is-invalid]="fc.name.invalid && (fc.name.touched)"
                                      required
-                                     placeholder="الأسم"
+                                     placeholder="اسم الكورس"
                                     containerClass="" />
                             </div>
                             <!-- educationlevel  -->
-                            <div class="col-6 mb-3">
+                            <!-- <div class="col-6 mb-3">
                                 <label for="validation01"><span class="validation-required">*</span>المرحلة الدراسية</label>
                                 <input class="form-control" id="validation01" type="text" formControlName="Educationlevel"
                                 [tooltip]="fc.Educationlevel.errors?.required ? 'الحقل مطلوب' : null"
@@ -41,9 +40,9 @@
                                      required
                                      placeholder="اسم المرحلة الدراسية"
                                     containerClass="" />
-                            </div>
+                            </div> -->
                             <!-- QrCode  -->
-                            <div class="col-6 mb-3">
+                            <!-- <div class="col-6 mb-3">
                                 <label for="validation01"><span class="validation-required">*</span>المساح الضوئي للكورس</label>
                                <ngx-qrcode style="width: 60%; height: 220px;"
                                [elementType]="elementType"
@@ -55,7 +54,7 @@
                                      required
                                      placeholder="اكتب ما يميز الكورس"
                                     containerClass="" />
-                            </div>
+                            </div> -->
                           
                  
                         </div>

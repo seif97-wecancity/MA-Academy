@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 import { StudentsService } from '../../../../shared/API-Service/services/students.service';
 
 @Component({
@@ -8,18 +10,54 @@ import { StudentsService } from '../../../../shared/API-Service/services/student
 })
 export class ViewStudentsComponent implements OnInit {
 students:any [];
-  constructor(private _StudentsService:StudentsService) { }
+  constructor(private _StudentsService:StudentsService, private _Router:Router) { }
 
   ngOnInit(): void {
+    this.getstudents();
   }
 
-
+getstudents(){
+  this._StudentsService.GetStudent().subscribe((res) => {
+    this.students = res; 
+  })
+}
 
   delete(id : number){
-
+    Swal.fire({
+      title: 'هل تريد مسح الكورس ؟',
+      text: "لن يكون لك صلاحية إعادته مره اخرى",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      cancelButtonText: 'الغاء',
+      confirmButtonText: 'امسح العنصر !'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this._StudentsService.DeleteStudent(id).subscribe((res) => {
+          Swal.fire({
+            icon: "success",
+            title: "تم المسح بنجاح",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+       this.getstudents();
+        },(err) => {
+          Swal.fire({
+            icon: 'error',
+            title: 'خطأ',
+            text:err.error.message    
+          })
+          this.getstudents();
+        },() => {
+          console.log("completed");
+        })
+      }
+    }) 
   }
   update(record:object){
-
+    this._StudentsService.Student.next(record);
+    this._Router.navigate(['content/admin/InsertStudents']);
   }
 }
 

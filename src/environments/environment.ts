@@ -8,7 +8,8 @@ export const environment = {
   // Server_URL:'https://localhost:7296/api',
  
 };
-export const Server_URL='https://alandalusbimexdevapi.wecancity.com/api'
+// export const Server_URL='https://alandalusbimexdevapi.wecancity.com/api'
+export const Server_URL='https://www.maapp.misrpedia.com/public/api'
 // export const Server_URL='https://www.bazoka.eraasoft.com/api'
 
 /*

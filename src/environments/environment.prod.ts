@@ -26,7 +26,8 @@ export const environment = {
 
   // Server_URL:'https://localhost:7296/api'
   // Server_URL:'https://riskdevapi.wecancity.com/api',
-     Server_URL:`https://alandalusbimexdevapi.wecancity.com/api/en`
+    //  Server_URL:`https://alandalusbimexdevapi.wecancity.com/api/en`
+     Server_URL:`https://www.maapp.misrpedia.com/public/api`
 
  
 };

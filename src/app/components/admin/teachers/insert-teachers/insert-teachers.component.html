@@ -21,29 +21,41 @@
                             <!-- Teacher Name  -->
                             <div class="col-6 mb-3">
                                 <label for="validation01"><span class="validation-required">*</span> اسم المدرس</label>
-                                <input class="form-control" id="validation01" type="text" formControlName="Name"
-                                [tooltip]="fc.Name.errors?.required ? 'الحقل مطلوب' : null"
-                                [class.is-valid]="fc.Name.valid && (fc.Name.touched)"
-                                [class.is-invalid]="fc.Name.invalid && (fc.Name.touched)"
+                                <input class="form-control" id="validation01" type="text" formControlName="name"
+                                [tooltip]="fc.name.errors?.required ? 'الحقل مطلوب' : null"
+                                [class.is-valid]="fc.name.valid && (fc.name.touched)"
+                                [class.is-invalid]="fc.name.invalid && (fc.name.touched)"
                                 
                                      required
                                      placeholder="الأسم"
                                     containerClass="" />
                             </div>
-                            <!-- subject name  -->
+                            <!-- eduction level name  -->
                             <div class="col-6 mb-3">
-                                <label for="validation01"><span class="validation-required">*</span> اسم المادة</label>
-                                <input class="form-control" id="validation01" type="text" formControlName="Course"
-                                [tooltip]="fc.Course.errors?.required ? 'الحقل مطلوب' : null"
-                                [class.is-valid]="fc.Course.valid && (fc.Course.touched)"
-                                [class.is-invalid]="fc.Course.invalid && (fc.Course.touched)"
+                                <label for="validation01"><span class="validation-required">*</span>المرحلة الدراسية </label>
+                                <input class="form-control" id="validation01" type="text" formControlName="education_level"
+                                [tooltip]="fc.education_level.errors?.required ? 'الحقل مطلوب' : null"
+                                [class.is-valid]="fc.education_level.valid && (fc.education_level.touched)"
+                                [class.is-invalid]="fc.education_level.invalid && (fc.education_level.touched)"
                                 
                                      required
-                                     placeholder="اسم المادة"
+                                     placeholder="مثال : ابتدائي"
+                                    containerClass="" />
+                            </div>
+                            <!-- subject name  -->
+                            <div class="col-6 mb-3">
+                                <label for="validation01"><span class="validation-required">*</span>المادة </label>
+                                <input class="form-control" id="validation01" type="text" formControlName="subject"
+                                [tooltip]="fc.subject.errors?.required ? 'الحقل مطلوب' : null"
+                                [class.is-valid]="fc.subject.valid && (fc.subject.touched)"
+                                [class.is-invalid]="fc.subject.invalid && (fc.subject.touched)"
+                                
+                                     required
+                                     placeholder="اكتب المادة"
                                     containerClass="" />
                             </div>
                                                                      <!-- select subjects -->
-                     <div class="col-lg-6 col-sm-12  mb-3" style="margin-top: 7px;">
+                     <!-- <div class="col-lg-6 col-sm-12  mb-3" style="margin-top: 7px;">
                         <label for="validationCustom06"><span class="validation-required">*</span> اسم المادة او المواد</label>
                         <ng-multiselect-dropdown
                                formControlName=""
@@ -52,9 +64,9 @@
                                [data]="data"
                                [(ngModel)]="selectedItems">
                         </ng-multiselect-dropdown>
-                    </div>
+                    </div> -->
                         <!-- to insert image of the teacher  -->
-              <div class="col-6 my-3" style="padding: 1.5%;">
+              <!-- <div class="col-6 my-3" style="padding: 1.5%;">
                 <img  src="{{ imageLogo }}" style="width: 60%; height: 220px;" class="image-style p-2" *ngIf="imageLogo != null"/>
                <input type="file" formControlName="Photo" accept="image/*" #file id="getLogo"
                 style="display: none" (change)="getLogoUrl($event)" />
@@ -62,7 +74,7 @@
                 class="btn d-block"  style="width: 60%;">
                  صورة شخصية للمدرس
             </button>    
-                        </div>
+                        </div> -->
                            
                         </div>
 
