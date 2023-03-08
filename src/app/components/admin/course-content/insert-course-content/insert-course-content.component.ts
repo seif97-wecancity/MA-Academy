@@ -19,6 +19,7 @@ Image : File;
 imageLogo:string;
 update:boolean = false;
 button:boolean = false;
+recordtoupdate:any;
   constructor(private _CoursesService:CoursesService
              ,private _CourseContentService :CourseContentService 
              ,private _TeachersService:TeachersService
@@ -96,6 +97,7 @@ button:boolean = false;
        })
     }else if(this.CourseLectureForm.status == "VALID" && this.update == true){
       this.appendform();
+      this.CourseLectureFormData.append('Id', this.recordtoupdate.id);
       this._CourseContentService.UpdateCourseContent(this.CourseLectureFormData).subscribe((res) => {
         Swal.fire({
          icon: "success",
