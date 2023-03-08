@@ -22,6 +22,13 @@ getstudents(){
   })
 }
 
+// showimage(data){
+//   Swal.fire({
+//     imageUrl: `${this.img}${data}`,
+//     imageHeight: 300,
+//     imageAlt: 'A tall image'
+//   })
+// }
   delete(id : number){
     Swal.fire({
       title: 'هل تريد مسح الكورس ؟',

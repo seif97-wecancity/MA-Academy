@@ -24,6 +24,6 @@ export class CoursesService {
   }
 
    DeleteCourse(id:number):Observable<any>{
-   return this._HttpClient.delete(`${environment.Server_URL}/deleteSubject/${id}`);
+   return this._HttpClient.delete(`${environment.Server_URL}/deleteSubject/${id}?`);
   }
 }
