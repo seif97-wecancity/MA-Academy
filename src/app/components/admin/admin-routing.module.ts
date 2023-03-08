@@ -1,5 +1,7 @@
 import { NgModule, Component } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
+import { InsertCourseContentComponent } from "./course-content/insert-course-content/insert-course-content.component";
+import { ViewCourseContentComponent } from "./course-content/view-course-content/view-course-content.component";
 import { InsertCoursesComponent } from "./courses/insert-courses/insert-courses.component";
 import { ViewCoursesComponent } from "./courses/view-courses/view-courses.component";
 // ChangePassword Component
@@ -55,6 +57,14 @@ const routes: Routes = [
             {
                 path: "InsertUser",
                 component: UserComponent,
+            },
+            {
+                path: "ViewCourseLecture",
+                component: ViewCourseContentComponent,
+            },
+            {
+                path: "InsertCourseLecture",
+                component: InsertCourseContentComponent,
             },
             {
                 path: "ChangePassword",

@@ -30,7 +30,7 @@ const routes: Routes = [
   // },
   // {
   //   path: "login",
-  //   canActivate: [IsNotLoginGuard],
+  //   canActivate: [IsLoginGuard],
   //   component: LoginComponent,
   // },
   // {
@@ -49,7 +49,7 @@ const routes: Routes = [
   {
     path: "content",
     component: ContentComponent,
-    canActivate: [IsLoginGuard],
+    canActivate: [IsNotLoginGuard],
     children: content,
   },
   // {

@@ -138,6 +138,19 @@ export class NavService implements OnDestroy {
       ],
     },
     {
+      title: "مبادرات الكورسات",
+      icon: "book-open",
+      type: "sub",
+      badgeType: "success",
+      children: [
+        {
+          path: "admin/ViewCourseLecture",
+          title: "ادارة مبادرات الكورسات",
+          type: "link",
+        },
+      ],
+    },
+    {
       title: "المستخدمين",
       icon: "user-plus",
       type: "sub",
