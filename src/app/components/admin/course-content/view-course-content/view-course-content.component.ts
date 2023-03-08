@@ -18,7 +18,7 @@ export class ViewCourseContentComponent implements OnInit {
   }
 
   getcoursecontent(){
-  this._CourseContentService.GetCourseContent(1).subscribe((res) => {
+  this._CourseContentService.GetCourseContent().subscribe((res) => {
     this.courselectures = res;
   })
   }

@@ -11,6 +11,8 @@ import { ViewCoursesComponent } from "./courses/view-courses/view-courses.compon
 import { ViewProductComponent } from './product/view-product/view-product.component';
 import { InsertStudentsComponent } from "./students/insert-students/insert-students.component";
 import { ViewStudentsComponent } from "./students/view-students/view-students.component";
+import { InsertSubcourseComponent } from "./subcourse/insert-subcourse/insert-subcourse.component";
+import { ViewSubcourseComponent } from "./subcourse/view-subcourse/view-subcourse.component";
 import { InsertTeachersComponent } from "./teachers/insert-teachers/insert-teachers.component";
 import { ViewTeachersComponent } from "./teachers/view-teachers/view-teachers.component";
 import { ChangePasswordComponent } from "./User/change-password/change-password.component";
@@ -61,6 +63,14 @@ const routes: Routes = [
             {
                 path: "ViewCourseLecture",
                 component: ViewCourseContentComponent,
+            },
+            {
+                path: "InsertSubSubject",
+                component: InsertSubcourseComponent,
+            },
+            {
+                path: "ViewSubSubject",
+                component: ViewSubcourseComponent,
             },
             {
                 path: "InsertCourseLecture",

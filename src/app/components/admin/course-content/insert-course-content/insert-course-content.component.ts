@@ -16,7 +16,9 @@ teachers:any [];
 CourseLectureForm:FormGroup;
 CourseLectureFormData:FormData;
 Image : File;
+File : File;
 imageLogo:string;
+fileLogo:string;
 update:boolean = false;
 button:boolean = false;
 recordtoupdate:any;
@@ -44,9 +46,13 @@ recordtoupdate:any;
   initiate(){
     this.CourseLectureForm = this._FormBuilder.group({
       name: ['', Validators.required],
-      lessonnumber: ['', Validators.required],
+      // lessonnumber: ['', Validators.required],
       price: ['', Validators.required],
-      image: ['', Validators.required]
+      image: ['', Validators.required],
+      videoURL: ['', Validators.required],
+      teacherId: ['', Validators.required],
+      description: ['', Validators.required],
+      courseId: ['', Validators.required]
     });
   }
   get fc(){
@@ -56,9 +62,13 @@ recordtoupdate:any;
   appendform(){
     this.CourseLectureFormData = new FormData();
     this.CourseLectureFormData.append("name", this.CourseLectureForm.value.name);
-    this.CourseLectureFormData.append("lessonnumber", this.CourseLectureForm.value.lessonnumber);
+    this.CourseLectureFormData.append("description", this.CourseLectureForm.value.description);
+    this.CourseLectureFormData.append("subject_id", this.CourseLectureForm.value.courseId);
+    this.CourseLectureFormData.append("teacher_id", this.CourseLectureForm.value.teacherId);
+    this.CourseLectureFormData.append("video_url", this.CourseLectureForm.value.videoURL);
     this.CourseLectureFormData.append("price", this.CourseLectureForm.value.price);
     this.CourseLectureFormData.append("image", this.Image);
+    this.CourseLectureFormData.append("file", this.File);
   }
   // imgFile
   getLogoUrl(event: any) {
@@ -69,6 +79,18 @@ recordtoupdate:any;
       reader.readAsDataURL(file);
       reader.onload = () => {
         this.imageLogo = reader.result as string;
+      };
+    }
+  }
+  // File
+  getFileUrl(event: any) {
+    const reader = new FileReader();
+    if (event.target.files && event.target.files.length) {
+      const [file] = event.target.files;
+      this.File = event.target.files[0];
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        this.fileLogo = reader.result as string;
       };
     }
   }

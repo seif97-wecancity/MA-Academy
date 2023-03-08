@@ -52,10 +52,10 @@ const routes: Routes = [
     canActivate: [IsNotLoginGuard],
     children: content,
   },
-  // {
-  //   path: '**',
-  //   redirectTo: ''
-  // }
+  {
+    path: '**',
+    redirectTo: 'content/admin  '
+  }
 ];
 
 @NgModule({

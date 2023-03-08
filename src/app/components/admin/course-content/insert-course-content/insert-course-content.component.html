@@ -31,7 +31,7 @@
                                     containerClass=""/>
                             </div>
                             <!-- lesson number  -->
-                            <div class="col-6 mb-3">
+                            <!-- <div class="col-6 mb-3">
                                 <label for="validation01"><span class="validation-required">*</span> عدد الحصص</label>
                                 <input class="form-control" id="validation01" type="text" formControlName="lessonnumber"
                                 [tooltip]="fc.lessonnumber.errors?.required ? 'الحقل مطلوب' : null"
@@ -41,7 +41,7 @@
                                      required
                                      placeholder="اكتب عدد الحصص"
                                     containerClass="" />
-                            </div>
+                            </div> -->
                             <!-- price  -->
                             <div class="col-6 mb-3">
                                 <label for="validation01"><span class="validation-required">*</span>  سعر المادة</label>
@@ -54,14 +54,46 @@
                                      placeholder="اكتب سعر المادة"
                                     containerClass="" />
                             </div>
+                            <!-- videoURL  -->
+                            <div class="col-6 mb-3">
+                                <label for="validation01"><span class="validation-required">*</span> الرابط للفيديو</label>
+                                <input class="form-control" id="validation01" type="text" formControlName="videoURL"
+                                [tooltip]="fc.videoURL.errors?.required ? 'الحقل مطلوب' : null"
+                                [class.is-valid]="fc.videoURL.valid && (fc.videoURL.touched)"
+                                [class.is-invalid]="fc.videoURL.invalid && (fc.videoURL.touched)"
+                                     required
+                                     placeholder="ادخل رابط الفيديو"
+                                    containerClass="" />
+                            </div>
+                            <!-- description  -->
+                            <div class="col-6 mb-3">
+                                <label for="validation01"><span class="validation-required">*</span> وصف محتوى المادة</label>
+                                <input class="form-control" id="validation01" type="text" formControlName="description"
+                                [tooltip]="fc.description.errors?.required ? 'الحقل مطلوب' : null"
+                                [class.is-valid]="fc.description.valid && (fc.description.touched)"
+                                [class.is-invalid]="fc.description.invalid && (fc.description.touched)"
+                                     required
+                                     placeholder="ادخل رابط الفيديو"
+                                    containerClass="" />
+                            </div>
                             <!-- choose course -->
                             <div class="col-lg-6 col-sm-12  mb-3">
                                 <label for="validationCustom05"><span class="validation-required">*</span> اختر المادة</label>
-                                <ng-select #Governorate  [selectOnTab]="true" formControlName="ProductCategoryId"
+                                <ng-select #Governorate  [selectOnTab]="true" formControlName="courseId"
                                     class="form-control p-0" placeholder="اختر مادة"
                                     containerClass="" 
                                     id="validationCustom05">
-                                    <ng-option *ngFor="let item of courses" [value]="item.id" >{{item.title}}</ng-option>
+                                    <ng-option *ngFor="let item of courses" [value]="item.id" >{{item.name}}</ng-option>
+                                </ng-select>
+                            </div>
+                            <!-- choose teacher -->
+                            <div class="col-lg-6 col-sm-12  mb-3">
+                                <label for="validationCustom05"><span class="validation-required">*</span> اختر المدرس</label>
+                                <ng-select #Governorate  [selectOnTab]="true" formControlName="teacherId"
+                                    class="form-control p-0" placeholder="اختر مادة"
+                                    containerClass="" 
+                                    id="validationCustom05">
+                                    <ng-option *ngFor="let item of teachers" [value]="item.id" >{{item.name}}</ng-option>
                                 </ng-select>
                             </div>
                             
@@ -73,6 +105,15 @@
             <button type="button" onclick="document.getElementById('getLogo').click()"
                 class="btn  d-block"  style="width: 60%;">
                     ارفاق صورة للمحتوى   
+            </button>    
+                        </div>
+              <div class="col-6 my-4" style="padding: 1%;">
+                <img  src="{{ fileLogo }}" style="width: 60%; height: 220px;" class="image-style p-2" *ngIf="fileLogo != null"/>
+               <input type="file" formControlName="file" accept="image/*" #file id="getFile"
+                style="display: none" (change)="getFileUrl($event)" />
+            <button type="button" onclick="document.getElementById('getFile').click()"
+                class="btn  d-block"  style="width: 60%;">
+                    ارفاق ملف pdf    
             </button>    
                         </div>
                            

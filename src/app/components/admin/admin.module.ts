@@ -41,6 +41,8 @@ import { UserComponent } from './User/user/user.component';
 import { ChangePasswordComponent } from './User/change-password/change-password.component';
 import { ViewCourseContentComponent } from './course-content/view-course-content/view-course-content.component';
 import { InsertCourseContentComponent } from './course-content/insert-course-content/insert-course-content.component';
+import { ViewSubcourseComponent } from './subcourse/view-subcourse/view-subcourse.component';
+import { InsertSubcourseComponent } from './subcourse/insert-subcourse/insert-subcourse.component';
 
  @NgModule({
   declarations: [
@@ -55,6 +57,8 @@ import { InsertCourseContentComponent } from './course-content/insert-course-con
     ChangePasswordComponent,
     ViewCourseContentComponent,
     InsertCourseContentComponent,
+    ViewSubcourseComponent,
+    InsertSubcourseComponent,
    
     
   ],

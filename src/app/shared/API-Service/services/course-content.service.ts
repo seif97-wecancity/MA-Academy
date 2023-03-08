@@ -11,12 +11,12 @@ export class CourseContentService {
   constructor(private _HttpClient:HttpClient) { }
 
 
-  GetCourseContent(id:number):Observable<any>{
-    return this._HttpClient.get(`${environment.Server_URL}/listSubject${id}?`);
+  GetCourseContent():Observable<any>{
+    return this._HttpClient.get(`${environment.Server_URL}/listSubjectContent`);
   }
 
   CreateCourseContent(data : object):Observable<any>{
-   return this._HttpClient.post(`${environment.Server_URL}/listSubject`, data);
+   return this._HttpClient.post(`${environment.Server_URL}/addSubjectContent`, data);
   }
 
   UpdateCourseContent(data : object):Observable<any>{
@@ -24,7 +24,7 @@ export class CourseContentService {
   }
 
   DeleteCourseContent(id:number):Observable<any>{
-    return this._HttpClient.delete(`${environment.Server_URL}/listSubject${id}?`);
+    return this._HttpClient.delete(`${environment.Server_URL}/deleteSubjectContent/${id}`);
   }
 }
 
