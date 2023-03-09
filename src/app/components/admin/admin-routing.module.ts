@@ -4,6 +4,8 @@ import { InsertCourseContentComponent } from "./course-content/insert-course-con
 import { ViewCourseContentComponent } from "./course-content/view-course-content/view-course-content.component";
 import { InsertCoursesComponent } from "./courses/insert-courses/insert-courses.component";
 import { ViewCoursesComponent } from "./courses/view-courses/view-courses.component";
+import { InsertEducationlevelComponent } from "./education_level/insert-educationlevel/insert-educationlevel.component";
+import { ViewEducationlevelComponent } from "./education_level/view-educationlevel/view-educationlevel.component";
 // ChangePassword Component
 
 
@@ -71,6 +73,14 @@ const routes: Routes = [
             {
                 path: "ViewSubSubject",
                 component: ViewSubcourseComponent,
+            },
+            {
+                path: "ViewEducationLevel",
+                component: ViewEducationlevelComponent,
+            },
+            {
+                path: "InsertEducationLevel",
+                component: InsertEducationlevelComponent,
             },
             {
                 path: "InsertCourseLecture",

@@ -4,7 +4,7 @@
             <div class="card">
                 <div class="card-header" style="padding-bottom: 5px !important">
                     <div >
-                        <h5 class="pb-2">طالب جديد</h5>
+                        <h5 class="pb-2">مرحلة دراسية جديدة</h5>
 
                        <span> يرجى ملئ جميع الخانات </span>
                     </div>
@@ -14,48 +14,36 @@
                 </div>
                 <div class="card-body">
                     <form class="needs-validation" autocomplete="off" 
-                    [formGroup] = "StudentForm"
+                    [formGroup] = "educationlevelForm"
                     (ngSubmit)="onSubmit()" 
                     novalidate>
                         <div class="form-row">
-                            <!-- Student Name  -->
+                            <!-- Education Level Name  -->
                             <div class="col-6 mb-3">
-                                <label for="validation01"><span class="validation-required">*</span> اسم الطالب</label>
+                                <label for="validation01"><span class="validation-required">*</span> اسم المرحلة الدراسية باللغة العربية</label>
                                 <input class="form-control" id="validation01" type="text" formControlName="name"
                                 [tooltip]="fc.name.errors?.required ? 'الحقل مطلوب' : null"
                                 [class.is-valid]="fc.name.valid && (fc.name.touched)"
                                 [class.is-invalid]="fc.name.invalid && (fc.name.touched)"
-                                
                                      required
-                                     placeholder="الأسم"
+                                     appDisableWeritingEnglish
+                                     placeholder="اسم المرحلة الدراسية"
                                     containerClass="" />
                             </div>
-                            <!-- Student Age  -->
+                            <!-- Education Level Name English -->
                             <div class="col-6 mb-3">
-                                <label for="validation01"><span class="validation-required">*</span> المرحلة الدراسية</label>
-                                <input class="form-control" id="validation01" type="text" formControlName="grade"
-                                [tooltip]="fc.grade.errors?.required ? 'الحقل مطلوب' : null"
-                                [class.is-valid]="fc.grade.valid && (fc.grade.touched)"
-                                [class.is-invalid]="fc.grade.invalid && (fc.grade.touched)"
-                                onlyNumbers
+                                <label for="validation01"><span class="validation-required">*</span> اسم المرحلة الدراسية باللغة الانجليزية</label>
+                                <input class="form-control" id="validation01" type="text" formControlName="nameEn"
+                                [tooltip]="fc.nameEn.errors?.required ? 'الحقل مطلوب' : null"
+                                [class.is-valid]="fc.nameEn.valid && (fc.nameEn.touched)"
+                                [class.is-invalid]="fc.nameEn.invalid && (fc.nameEn.touched)"
                                      required
-                                     placeholder="اكتب المرحلة الدراسية بالارقام"
+                                     appDisableWeritingArabic
+                                     placeholder="اسم المرحلة الدراسية"
                                     containerClass="" />
                             </div>
-                          
-                        <!-- to insert image for the student  -->
-              <!-- <div class="col-6 my-3 " >
-                <img  src="{{ imageLogo }}" style="width: 60%; height: 220px;" class="image-style p-2" *ngIf="imageLogo != null"/>
-               <input type="file" formControlName="Photo" accept="image/*" #file id="getLogo"
-                style="display: none" (change)="getLogoUrl($event)" />
-            <button type="button" onclick="document.getElementById('getLogo').click()"
-                class="btn  d-block"  style="width: 60%;">
-                 صورة شخصية للطالب
-            </button>    
-                        </div> -->
                            
                         </div>
-
                         <br>
                         <ng-template #elseBlock>
                             <button [disabled]="button" class="btn pull-right" type="submit">

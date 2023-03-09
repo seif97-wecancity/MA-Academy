@@ -43,6 +43,8 @@ import { ViewCourseContentComponent } from './course-content/view-course-content
 import { InsertCourseContentComponent } from './course-content/insert-course-content/insert-course-content.component';
 import { ViewSubcourseComponent } from './subcourse/view-subcourse/view-subcourse.component';
 import { InsertSubcourseComponent } from './subcourse/insert-subcourse/insert-subcourse.component';
+import { ViewEducationlevelComponent } from './education_level/view-educationlevel/view-educationlevel.component';
+import { InsertEducationlevelComponent } from './education_level/insert-educationlevel/insert-educationlevel.component';
 
  @NgModule({
   declarations: [
@@ -59,6 +61,8 @@ import { InsertSubcourseComponent } from './subcourse/insert-subcourse/insert-su
     InsertCourseContentComponent,
     ViewSubcourseComponent,
     InsertSubcourseComponent,
+    ViewEducationlevelComponent,
+    InsertEducationlevelComponent,
    
     
   ],
