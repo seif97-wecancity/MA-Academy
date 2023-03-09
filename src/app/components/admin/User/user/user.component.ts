@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
-
+import { CoursesService } from './../../../../shared/API-Service/services/courses.service';
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -11,17 +11,29 @@ export class UserComponent implements OnInit {
 userForm:FormGroup;
 update:boolean = false;
 button:boolean = false;
-  constructor(private _FormBuilder:FormBuilder) { }
+courses:any [];
+  constructor(private _FormBuilder:FormBuilder
+             ,private _CoursesService:CoursesService) { }
 
   ngOnInit(): void {
     this.initiate();
+    this.getdropdowns();
   }
 
-  
+  getdropdowns(){
+  this._CoursesService.GetCourse().subscribe((res) => {
+    this.courses = res;
+  })
+  }
   initiate(){
     this.userForm = this._FormBuilder.group({
-      Name: ['', Validators.required],
-      Password: ['', Validators.required],
+      name: ['', Validators.required],
+      password: ['', Validators.required],
+      phone: ['', Validators.required],
+      education_level: ['', Validators.required],
+      gender: ['', Validators.required],
+      location: ['', Validators.required],
+      subject: ['', Validators.required]
     });
   }
   get fc(){

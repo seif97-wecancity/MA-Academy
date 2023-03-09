@@ -21,22 +21,22 @@
                             <!-- Name  -->
                             <div class="col-6 mb-3">
                                 <label for="validation01"><span class="validation-required">*</span> اسم المستخدم</label>
-                                <input class="form-control" id="validation01" type="text" formControlName="Name"
-                                [tooltip]="fc.Name.errors?.required ? 'الحقل مطلوب' : null"
-                                [class.is-valid]="fc.Name.valid && (fc.Name.touched)"
-                                [class.is-invalid]="fc.Name.invalid && (fc.Name.touched)"
+                                <input class="form-control" id="validation01" type="text" formControlName="name"
+                                [tooltip]="fc.name.errors?.required ? 'الحقل مطلوب' : null"
+                                [class.is-valid]="fc.name.valid && (fc.name.touched)"
+                                [class.is-invalid]="fc.name.invalid && (fc.name.touched)"
                                 
                                      required
                                      placeholder="اسم المستخدم"
                                     containerClass="" />
                             </div>
-                            <!-- title  -->
+                            <!-- password  -->
                             <div class="col-6 mb-3">
                                 <label for="validation01"><span class="validation-required">*</span> الرقم السري</label>
-                                <input class="form-control" id="validation01" type="text" formControlName="Password"
-                                [tooltip]="fc.Password.errors?.required ? 'الحقل مطلوب' : null"
-                                [class.is-valid]="fc.Password.valid && (fc.Password.touched)"
-                                [class.is-invalid]="fc.Password.invalid && (fc.Password.touched)"
+                                <input class="form-control" id="validation01" type="text" formControlName="password"
+                                [tooltip]="fc.password.errors?.required ? 'الحقل مطلوب' : null"
+                                [class.is-valid]="fc.password.valid && (fc.password.touched)"
+                                [class.is-invalid]="fc.password.invalid && (fc.password.touched)"
                                 onlyNumbers
                                      required
                                      placeholder="********"
