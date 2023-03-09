@@ -42,9 +42,32 @@
                                      placeholder="مثال : ابتدائي"
                                     containerClass="" />
                             </div>
+
+                             <!-- choose education level  -->
+                             <!-- <div class="col-lg-6 col-sm-12  mb-3">
+                                <label for="validationCustom05"><span class="validation-required">*</span> المرحلة الدراسية</label>
+                                <ng-select  [selectOnTab]="true" formControlName="education_level"
+                                    class="form-control p-0" placeholder="اختر المرحلة الدراسية"
+                                    containerClass="" 
+                                    id="validationCustom05">
+                                    <ng-option *ngFor="let item of educationlevels" [value]="item.id" >{{item.name}}</ng-option>
+                                </ng-select>
+                            </div> -->
+                            
+                             <!-- choose subject  -->
+                             <!-- <div class="col-lg-6 col-sm-12  mb-3">
+                                <label for="validationCustom05"><span class="validation-required">*</span> المادة</label>
+                                <ng-select  [selectOnTab]="true" formControlName="subject"
+                                    class="form-control p-0" placeholder="اختر المادة "
+                                    containerClass="" 
+                                    id="validationCustom05">
+                                    <ng-option *ngFor="let item of subjects" [value]="item.id">{{item.name}}</ng-option>
+                                </ng-select>
+                            </div> -->
+
                             <!-- subject name  -->
                             <div class="col-6 mb-3">
-                                <label for="validation01"><span class="validation-required">*</span>المادة </label>
+                                <label for="validation01"><span class="validation-required">*</span> المادة</label>
                                 <input class="form-control" id="validation01" type="text" formControlName="subject"
                                 [tooltip]="fc.subject.errors?.required ? 'الحقل مطلوب' : null"
                                 [class.is-valid]="fc.subject.valid && (fc.subject.touched)"

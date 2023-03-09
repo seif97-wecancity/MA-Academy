@@ -4,6 +4,9 @@ import { Router } from '@angular/router';
 import { IDropdownSettings, } from 'ng-multiselect-dropdown';
 import Swal from 'sweetalert2';
 import { TeachersService } from './../../../../shared/API-Service/services/teachers.service';
+import { CoursesService } from './../../../../shared/API-Service/services/courses.service';
+import { EducationLevelService } from './../../../../shared/API-Service/services/education-level.service';
+
 @Component({
   selector: 'app-insert-teachers',
   templateUrl: './insert-teachers.component.html',
@@ -12,6 +15,8 @@ import { TeachersService } from './../../../../shared/API-Service/services/teach
 export class InsertTeachersComponent implements OnInit {
 update:boolean = false;
 button:boolean = false;
+educationlevels:any[];
+subjects:any[];
 recordtoupdate:any;
 dropdownSettings = {
   singleSelection: false,
@@ -26,9 +31,14 @@ data:any [];
   TeacherForm:FormGroup;
   imageLogo:string;
   Image:File;
-  constructor(private _FormBuilder:FormBuilder, private _TeachersService:TeachersService, private _Router:Router) { }
+  constructor(private _FormBuilder:FormBuilder
+             ,private _TeachersService:TeachersService
+             ,private _Router:Router
+             ,private _EducationLevelService:EducationLevelService
+             ,private _CoursesService:CoursesService) { }
 
   ngOnInit(): void {
+    this.getdropdowns();
     this._TeachersService.Teacher.subscribe((res) => {
       if( res == null){
         this.initiate();
@@ -40,6 +50,14 @@ data:any [];
     })
   }
 
+  getdropdowns(){
+  this._EducationLevelService.GetEducationLevel().subscribe((res) => {
+    this.educationlevels = res;
+  })
+  this._CoursesService.GetCourse().subscribe((res) => {
+    this.subjects = res;
+  })
+  }
   initiate(){
     this.TeacherForm = this._FormBuilder.group({
       name: ['', Validators.required],
