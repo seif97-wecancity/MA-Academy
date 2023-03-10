@@ -40,21 +40,21 @@ const routes: Routes = [
 
   //   children: content,
   // },
+  // {
+  //   path: "",
+  //   component: LoginComponent,
+  //   canActivate: [IsNotLoginGuard],
+  //   children: content,
+  // },
   {
     path: "",
-    component: LoginComponent,
-    canActivate: [IsNotLoginGuard],
-    children: content,
-  },
-  {
-    path: "content",
     component: ContentComponent,
     canActivate: [IsNotLoginGuard],
     children: content,
   },
   {
     path: '**',
-    redirectTo: 'content/admin  '
+    redirectTo: 'content/admin'
   }
 ];
 

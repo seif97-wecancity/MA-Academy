@@ -107,17 +107,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AppRoutingModule": function() { return /* binding */ AppRoutingModule; }
 /* harmony export */ });
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ 39895);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ 39895);
 /* harmony import */ var _shared_components_layout_content_content_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./shared/components/layout/content/content.component */ 14649);
 /* harmony import */ var _shared_routes_routes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./shared/routes/routes */ 46382);
 /* harmony import */ var _shared_guard_is_not_login_guard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./shared/guard/is-not-login.guard */ 31762);
-/* harmony import */ var _shared_Models_login_login_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./shared/Models/login/login.component */ 86022);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 37716);
 
 
 
-
-// login
 
 
 
@@ -147,37 +144,37 @@ const routes = [
     //   component: ViewProductComponent,
     //   children: content,
     // },
+    // {
+    //   path: "",
+    //   component: LoginComponent,
+    //   canActivate: [IsNotLoginGuard],
+    //   children: content,
+    // },
     {
         path: "",
-        component: _shared_Models_login_login_component__WEBPACK_IMPORTED_MODULE_3__.LoginComponent,
-        canActivate: [_shared_guard_is_not_login_guard__WEBPACK_IMPORTED_MODULE_2__.IsNotLoginGuard],
-        children: _shared_routes_routes__WEBPACK_IMPORTED_MODULE_1__.content,
-    },
-    {
-        path: "content",
         component: _shared_components_layout_content_content_component__WEBPACK_IMPORTED_MODULE_0__.ContentComponent,
         canActivate: [_shared_guard_is_not_login_guard__WEBPACK_IMPORTED_MODULE_2__.IsNotLoginGuard],
         children: _shared_routes_routes__WEBPACK_IMPORTED_MODULE_1__.content,
     },
     {
         path: '**',
-        redirectTo: 'content/admin  '
+        redirectTo: 'content/admin'
     }
 ];
 class AppRoutingModule {
 }
 AppRoutingModule.ɵfac = function AppRoutingModule_Factory(t) { return new (t || AppRoutingModule)(); };
-AppRoutingModule.ɵmod = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineNgModule"]({ type: AppRoutingModule });
-AppRoutingModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjector"]({ imports: [[
+AppRoutingModule.ɵmod = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({ type: AppRoutingModule });
+AppRoutingModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ imports: [[
             [
-                _angular_router__WEBPACK_IMPORTED_MODULE_5__.RouterModule.forRoot(routes, {
+                _angular_router__WEBPACK_IMPORTED_MODULE_4__.RouterModule.forRoot(routes, {
                     anchorScrolling: "enabled",
                     scrollPositionRestoration: "enabled",
                     relativeLinkResolution: "legacy",
                 }),
             ],
-        ], _angular_router__WEBPACK_IMPORTED_MODULE_5__.RouterModule] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵsetNgModuleScope"](AppRoutingModule, { imports: [_angular_router__WEBPACK_IMPORTED_MODULE_5__.RouterModule], exports: [_angular_router__WEBPACK_IMPORTED_MODULE_5__.RouterModule] }); })();
+        ], _angular_router__WEBPACK_IMPORTED_MODULE_4__.RouterModule] });
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵsetNgModuleScope"](AppRoutingModule, { imports: [_angular_router__WEBPACK_IMPORTED_MODULE_4__.RouterModule], exports: [_angular_router__WEBPACK_IMPORTED_MODULE_4__.RouterModule] }); })();
 
 
 /***/ }),
@@ -3935,7 +3932,7 @@ class LoginComponent {
     }
 }
 LoginComponent.ɵfac = function LoginComponent_Factory(t) { return new (t || LoginComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_2__.FormBuilder), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_API_Service_services_login_service__WEBPACK_IMPORTED_MODULE_1__.LoginService), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_4__.Router)); };
-LoginComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({ type: LoginComponent, selectors: [["app-login"]], decls: 39, vars: 2, consts: [[1, "container-fluid"], [1, "row"], [1, "col-lg-7", "p-0", "d-none", "d-sm-block"], ["alt", "", "src", "../assets/images/dashboard/login.png", "alt", "loginpage", 1, "w-100", "vh-100"], [1, "col-lg-5", "col-sm-12"], [1, "col-12", "p-0"], [1, "login-card"], ["id", "Sign-User", 1, "login-main"], [1, "text-center"], ["src", "./../../../../assets/images/dashboard/upperlogo.png", "width", "250px", "height", "250px", "alt", ""], ["novalidate", "", 1, "theme-form", "needs-validation", 3, "formGroup", "ngSubmit"], [1, "form-row"], [1, "col-form-label", "col-12", "d-flex"], [1, "col-12", "col-sm-12"], ["required", "", "placeholder", "\u0627\u0633\u0645 \u0627\u0644\u0645\u0633\u062A\u062E\u062F\u0645", "formControlName", "userName", 1, "form-control"], [1, "col-12", "mb-0"], [1, "col-form-label", "d-flex"], [1, "form-input", "position-relative"], ["required", "", "placeholder", "*********", "formControlName", "password", 1, "form-control", 3, "type"], [1, "form-group", "mb-0", "mt-3"], ["type", "submit", 1, "btn", "btn-primary", "btn-block", "w-100"], [1, "col-form-label"], [1, "w-100"], [2, "text-align", "center"]], template: function LoginComponent_Template(rf, ctx) { if (rf & 1) {
+LoginComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({ type: LoginComponent, selectors: [["app-login"]], decls: 39, vars: 2, consts: [[1, "container-fluid"], [1, "row"], [1, "col-lg-7", "p-0", "d-none", "d-sm-block"], ["alt", "", "src", "assets/images/dashboard/login.png", "alt", "loginpage", 1, "w-100", "vh-100"], [1, "col-lg-5", "col-sm-12"], [1, "col-12", "p-0"], [1, "login-card"], ["id", "Sign-User", 1, "login-main"], [1, "text-center"], ["src", "assets/images/dashboard/upperlogo.png", "width", "250px", "height", "250px", "alt", ""], ["novalidate", "", 1, "theme-form", "needs-validation", 3, "formGroup", "ngSubmit"], [1, "form-row"], [1, "col-form-label", "col-12", "d-flex"], [1, "col-12", "col-sm-12"], ["required", "", "placeholder", "\u0627\u0633\u0645 \u0627\u0644\u0645\u0633\u062A\u062E\u062F\u0645", "formControlName", "userName", 1, "form-control"], [1, "col-12", "mb-0"], [1, "col-form-label", "d-flex"], [1, "form-input", "position-relative"], ["required", "", "placeholder", "*********", "formControlName", "password", 1, "form-control", 3, "type"], [1, "form-group", "mb-0", "mt-3"], ["type", "submit", 1, "btn", "btn-primary", "btn-block", "w-100"], [1, "col-form-label"], [1, "w-100"], [2, "text-align", "center"]], template: function LoginComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](2, "div", 2);
