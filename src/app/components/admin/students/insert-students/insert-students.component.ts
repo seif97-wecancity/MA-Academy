@@ -34,7 +34,7 @@ button:boolean = false
   initiate(){
     this.StudentForm = this._FormBuilder.group({
       name: ['', Validators.required],
-      grade: ['', Validators.required]
+      education_level: ['', Validators.required]
       // Photo: ['', Validators.required]
     });
   }

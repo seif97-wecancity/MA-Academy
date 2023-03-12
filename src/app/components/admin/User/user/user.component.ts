@@ -43,7 +43,7 @@ gender:String []= [ 'ذكر', 'انثى'];
       this._RegisterService.CreateAdmin(this.userForm.value).subscribe((res) => {
         Swal.fire({
          icon: "success",
-         title: "تم تسجيل محتوى المادة بنجاح",
+         title: "تم تسجيل شخص جديد بنجاح",
          showConfirmButton: false,
          timer: 1500,
        }); 

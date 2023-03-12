@@ -19,6 +19,7 @@ students:any [];
 getstudents(){
   this._StudentsService.GetStudent().subscribe((res) => {
     this.students = res; 
+    
   })
 }
 

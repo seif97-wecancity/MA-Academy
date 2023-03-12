@@ -24,7 +24,7 @@ person:FormGroup ;
 
   initiate(){
     this.person = this._FormBuilder.group({
-      "userName": ['', Validators.required],
+      "email": ['', Validators.required],
       "password": ['', Validators.required],
     });
   }
@@ -42,7 +42,6 @@ person:FormGroup ;
   onSubmit(){
     
     this._LoginService.user_login(this.person.value).subscribe((res) => {
-      debugger
           console.log(res);
           Swal.fire({
             icon: "success",
@@ -50,7 +49,7 @@ person:FormGroup ;
             showConfirmButton: false,
             timer: 1500,
           });
-          localStorage.setItem('Authorization',res.data["token"]);
+          // localStorage.setItem('Authorization',res.data["token"]);
           this._Router.navigate(["/content/admin"]);
     },(err) =>{
     console.log("their is an error");

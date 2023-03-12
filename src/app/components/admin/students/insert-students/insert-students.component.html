@@ -30,16 +30,15 @@
                                      placeholder="الأسم"
                                     containerClass="" />
                             </div>
-                            <!-- Student Age  -->
+                            <!-- Education Level -->
                             <div class="col-6 mb-3">
                                 <label for="validation01"><span class="validation-required">*</span> المرحلة الدراسية</label>
-                                <input class="form-control" id="validation01" type="text" formControlName="grade"
-                                [tooltip]="fc.grade.errors?.required ? 'الحقل مطلوب' : null"
-                                [class.is-valid]="fc.grade.valid && (fc.grade.touched)"
-                                [class.is-invalid]="fc.grade.invalid && (fc.grade.touched)"
-                                onlyNumbers
+                                <input class="form-control" id="validation01" type="text" formControlName="education_level"
+                                [tooltip]="fc.education_level.errors?.required ? 'الحقل مطلوب' : null"
+                                [class.is-valid]="fc.education_level.valid && (fc.education_level.touched)"
+                                [class.is-invalid]="fc.education_level.invalid && (fc.education_level.touched)"
                                      required
-                                     placeholder="اكتب المرحلة الدراسية بالارقام"
+                                     placeholder="اكتب المرحلة الدراسية "
                                     containerClass="" />
                             </div>
                           
