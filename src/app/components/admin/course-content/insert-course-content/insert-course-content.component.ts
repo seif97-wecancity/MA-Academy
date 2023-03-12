@@ -90,7 +90,7 @@ recordtoupdate:any;
       this.File = event.target.files[0];
       reader.readAsDataURL(file);
       reader.onload = () => {
-        this.fileLogo = reader.result as string;
+        this.fileLogo = 'assets/images/file.png';
       };
     }
   }

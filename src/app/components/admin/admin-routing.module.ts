@@ -28,8 +28,6 @@ const routes: Routes = [
     {
         path: "",
         children: [
-            
-
             {
                 path: "ViewProduct",
                 component: ViewProductComponent,
@@ -89,12 +87,7 @@ const routes: Routes = [
             {
                 path: "ChangePassword",
                 component: ChangePasswordComponent,
-            },
-           
-            
-           
-            
-           
+            },   
 ],
     },
 ];

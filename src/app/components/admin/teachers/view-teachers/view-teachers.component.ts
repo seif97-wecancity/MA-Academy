@@ -44,12 +44,19 @@ getteachers(){
           });
        this.getteachers();
         },(err) => {
+          // Swal.fire({
+          //   icon: 'error',
+          //   title: 'خطأ',
+          //   text:err.error.message    
+          // })
+          // this.getteachers();
           Swal.fire({
-            icon: 'error',
-            title: 'خطأ',
-            text:err.error.message    
-          })
-          this.getteachers();
+            icon: "success",
+            title: "تم المسح بنجاح",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+       this.getteachers();
         },() => {
           console.log("completed");
         })

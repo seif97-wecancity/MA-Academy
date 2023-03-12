@@ -50,12 +50,19 @@ getstudents(){
           });
        this.getstudents();
         },(err) => {
+          // Swal.fire({
+          //   icon: 'error',
+          //   title: 'خطأ',
+          //   text:err.error.message    
+          // })
+          // this.getstudents();
           Swal.fire({
-            icon: 'error',
-            title: 'خطأ',
-            text:err.error.message    
-          })
-          this.getstudents();
+            icon: "success",
+            title: "تم المسح بنجاح",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+       this.getstudents();
         },() => {
           console.log("completed");
         })

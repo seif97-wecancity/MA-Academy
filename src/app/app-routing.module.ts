@@ -40,22 +40,22 @@ const routes: Routes = [
 
   //   children: content,
   // },
-  // {
-  //   path: "",
-  //   component: LoginComponent,
-  //   canActivate: [IsNotLoginGuard],
-  //   children: content,
-  // },
   {
     path: "",
-    component: ContentComponent,
+    component: LoginComponent,
     canActivate: [IsNotLoginGuard],
     children: content,
   },
   {
-    path: '**',
-    redirectTo: 'content/admin'
-  }
+    path: "content",
+    component: ContentComponent,
+    canActivate: [IsNotLoginGuard],
+    children: content,
+  },
+  // {
+  //   path: '**',
+  //   redirectTo: 'content/admin'
+  // }
 ];
 
 @NgModule({

@@ -1,7 +1,9 @@
+import { StringMap } from '@angular/compiler/src/compiler_facade_interface';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
-import { CoursesService } from './../../../../shared/API-Service/services/courses.service';
+import { RegisterService } from './../../../../shared/API-Service/services/register.service';
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -11,29 +13,24 @@ export class UserComponent implements OnInit {
 userForm:FormGroup;
 update:boolean = false;
 button:boolean = false;
-courses:any [];
+gender:String []= [ 'ذكر', 'انثى'];
   constructor(private _FormBuilder:FormBuilder
-             ,private _CoursesService:CoursesService) { }
+             ,private _RegisterService:RegisterService
+             ,private _Router:Router) { }
 
   ngOnInit(): void {
     this.initiate();
-    this.getdropdowns();
   }
 
-  getdropdowns(){
-  this._CoursesService.GetCourse().subscribe((res) => {
-    this.courses = res;
-  })
-  }
+
   initiate(){
     this.userForm = this._FormBuilder.group({
       name: ['', Validators.required],
       password: ['', Validators.required],
-      phone: ['', Validators.required],
-      education_level: ['', Validators.required],
+      phone: ['', [Validators.required, Validators.pattern(`^01[0125]{1}[0-9]{8}`)]],
+      email: ['', [Validators.required,Validators.email]],
       gender: ['', Validators.required],
-      location: ['', Validators.required],
-      subject: ['', Validators.required]
+      location: ['', Validators.required]
     });
   }
   get fc(){
@@ -42,20 +39,34 @@ courses:any [];
 
   onSubmit(){
     this.button = true;
-    if(this.userForm.status == "Valid"){
-      Swal.fire({
-        icon: "success",
-        title: "تم تسجيل الطالب بنجاح",
-        showConfirmButton: false,
-        timer: 1500,
-      }); 
-    }else{
+    if( this.userForm.status == "VALID" && this.update == false){
+      this._RegisterService.CreateAdmin(this.userForm.value).subscribe((res) => {
+        Swal.fire({
+         icon: "success",
+         title: "تم تسجيل محتوى المادة بنجاح",
+         showConfirmButton: false,
+         timer: 1500,
+       }); 
+       this.userForm.reset();
+       },(err) => {
+        this.button = false;
+             Swal.fire({
+               icon: 'error',
+               title: 'خطأ',
+               text: 'تأكد من ملئ جميع الخانات',
+             });
+             this.button = false;
+       })
+    }else 
+    {
       this.button = false;
-      Swal.fire({
-        icon: 'error',
-        title: 'خطأ',
-        text: 'تأكد من ملئ جميع الخانات',
-      });  
+             Swal.fire({
+               icon: 'error',
+               title: 'خطأ',
+               text: 'تأكد من ملئ جميع الخانات',
+             });
+             this.button = false;
     }
+   
   }
 }

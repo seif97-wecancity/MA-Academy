@@ -44,12 +44,19 @@ subsubjects:any [];
           });
        this.getsubsubjects();
         },(err) => {
+          // Swal.fire({
+          //   icon: 'error',
+          //   title: 'خطأ',
+          //   text:err.error.message    
+          // })
+          // this.getsubsubjects();
           Swal.fire({
-            icon: 'error',
-            title: 'خطأ',
-            text:err.error.message    
-          })
-          this.getsubsubjects();
+            icon: "success",
+            title: "تم المسح بنجاح",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+       this.getsubsubjects();
         },() => {
           console.log("completed");
         })

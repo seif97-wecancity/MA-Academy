@@ -109,7 +109,7 @@
                         </div>
               <div class="col-6 my-4" style="padding: 1%;">
                 <img  src="{{ fileLogo }}" style="width: 60%; height: 220px;" class="image-style p-2" *ngIf="fileLogo != null"/>
-               <input type="file" formControlName="file" accept="image/*" #file id="getFile"
+               <input type="file" formControlName="file" accept="pdf/*" #file id="getFile"
                 style="display: none" (change)="getFileUrl($event)" />
             <button type="button" onclick="document.getElementById('getFile').click()"
                 class="btn  d-block"  style="width: 60%;">
