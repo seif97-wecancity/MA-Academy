@@ -10,6 +10,7 @@ import { StudentsService } from '../../../../shared/API-Service/services/student
 })
 export class ViewStudentsComponent implements OnInit {
 students:any [];
+img:string = 'https://www.maapp.misrpedia.com/storage/app/';
   constructor(private _StudentsService:StudentsService, private _Router:Router) { }
 
   ngOnInit(): void {
@@ -19,17 +20,16 @@ students:any [];
 getstudents(){
   this._StudentsService.GetStudent().subscribe((res) => {
     this.students = res; 
-    
   })
 }
 
-// showimage(data){
-//   Swal.fire({
-//     imageUrl: `${this.img}${data}`,
-//     imageHeight: 300,
-//     imageAlt: 'A tall image'
-//   })
-// }
+showimage(data){
+  Swal.fire({
+    imageUrl: `${this.img}${data}`,
+    imageHeight: 300,
+    imageAlt: 'A tall image'
+  })
+}
   delete(id : number){
     Swal.fire({
       title: 'هل تريد مسح الكورس ؟',
@@ -51,19 +51,12 @@ getstudents(){
           });
        this.getstudents();
         },(err) => {
-          // Swal.fire({
-          //   icon: 'error',
-          //   title: 'خطأ',
-          //   text:err.error.message    
-          // })
-          // this.getstudents();
           Swal.fire({
-            icon: "success",
-            title: "تم المسح بنجاح",
-            showConfirmButton: false,
-            timer: 1500,
-          });
-       this.getstudents();
+            icon: 'error',
+            title: 'خطأ',
+            text:err.error.message    
+          })
+          this.getstudents();
         },() => {
           console.log("completed");
         })

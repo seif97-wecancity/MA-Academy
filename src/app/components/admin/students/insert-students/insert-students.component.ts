@@ -11,6 +11,7 @@ import { EducationLevelService } from './../../../../shared/API-Service/services
 })
 export class InsertStudentsComponent implements OnInit {
 StudentForm:FormGroup;
+StudentFormdata:FormData;
 Image:File;
 imageLogo:string;
 recordtoupdate:any;
@@ -39,15 +40,23 @@ educationlevels:any;
   initiate(){
     this.StudentForm = this._FormBuilder.group({
       name: ['', Validators.required],
-      education_level: ['', Validators.required]
-      // Photo: ['', Validators.required]
+      educationId: ['', Validators.required],
+      image: ['', Validators.required]
     });
   }
   checkupdate(data?:any){
     this.StudentForm = this._FormBuilder.group({
       name: [data.name, Validators.required],
-      education_level: [data.education_level, Validators.required]
+      educationId: [data.educationId, Validators.required],
+      image: [data.image, Validators.required],
     });
+    
+  }
+  appendeddata(){
+    this.StudentFormdata = new FormData();
+    this.StudentFormdata.append("name", this.StudentForm.value.name);
+    this.StudentFormdata.append("educationId", this.StudentForm.value.educationId);
+    this.StudentFormdata.append("image", this.Image);
   }
   geteducationlevel(){
    this._EducationLevelService.GetEducationLevel().subscribe((res) => {
@@ -74,7 +83,8 @@ educationlevels:any;
   onSubmit(){
     this.button = true;
     if( this.StudentForm.status == "VALID" && this.update == false){
-      this._StudentsService.CreateStudent(this.StudentForm.value).subscribe((res) => {
+      this.appendeddata();
+      this._StudentsService.CreateStudent(this.StudentFormdata).subscribe((res) => {
         Swal.fire({
          icon: "success",
          title: "تم تسجيل الكورس بنجاح",
@@ -93,7 +103,8 @@ educationlevels:any;
              this.button = false;
        })
     }else if(this.StudentForm.status == "VALID" && this.update == true){
-      this._StudentsService.UpdateStudent(this.StudentForm.value , this.recordtoupdate.id).subscribe((res) => {
+      this.appendeddata()
+      this._StudentsService.UpdateStudent(this.StudentFormdata, this.recordtoupdate.id).subscribe((res) => {
         Swal.fire({
          icon: "success",
          title: "تم تعديل الكورس بنجاح",

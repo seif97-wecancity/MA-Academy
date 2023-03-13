@@ -62,6 +62,10 @@ const routes: Routes = [
                 component: ViewUserComponent,
             },
             {
+                path: "InsertUser",
+                component: UserComponent,
+            },
+            {
                 path: "ViewCourseLecture",
                 component: ViewCourseContentComponent,
             },

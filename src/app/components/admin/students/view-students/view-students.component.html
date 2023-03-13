@@ -28,6 +28,7 @@
                                         <th scope="col"></th>
                                         <th scope="col">اسم الطالب</th>
                                         <th scope="col">المرحلة الدراسية</th>
+                                        <th scope="col">الصورة الشخصية</th>
                                              
                                         <th scope="col"></th>
                                     </tr>
@@ -37,6 +38,7 @@
                                         <td scope="row" class="p-2">{{x+1}}</td>
                                         <td scope="row" class="p-2">{{view.name}}</td>
                                         <td scope="row" class="p-2">{{view.education_level}}</td>
+                                        <td scope="row" class="p-2"><a (click)="showimage(view.image)"><img [src]="img + view.image" width="20px" height="20px" alt=""></a></td>
                                         
                                             <td class="font-style chose">
                                                 <button class="btn pull-right"

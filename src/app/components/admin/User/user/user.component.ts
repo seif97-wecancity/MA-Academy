@@ -48,6 +48,7 @@ gender:String []= [ 'ذكر', 'انثى'];
          timer: 1500,
        }); 
        this.userForm.reset();
+       this._Router.navigate(['content/admin/ViewUser']);
        },(err) => {
         this.button = false;
              Swal.fire({
