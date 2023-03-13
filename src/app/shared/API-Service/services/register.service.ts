@@ -8,6 +8,7 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class RegisterService {
 
+  public user = new BehaviorSubject(null);
 
   constructor(private _HttpClient:HttpClient) { }
 
@@ -17,5 +18,12 @@ export class RegisterService {
    return this._HttpClient.post(`${environment.Server_URL}/register`, data);
   }
 
- 
+   GetUsers():Observable<any>{
+   return this._HttpClient.get(`${environment.Server_URL}/listUsers`);
+  }
+   
+  //  updateuser(record:any, id:number):Observable<any>{
+  //   return this._HttpClient.put(`${environment.Server_URL}/register/${id}/`, record);
+  //  }
+   
 }

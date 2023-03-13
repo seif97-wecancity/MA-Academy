@@ -21,10 +21,10 @@
                             <!-- Education Level Name  -->
                             <div class="col-6 mb-3">
                                 <label for="validation01"><span class="validation-required">*</span> اسم المرحلة الدراسية باللغة العربية</label>
-                                <input class="form-control" id="validation01" type="text" formControlName="name"
-                                [tooltip]="fc.name.errors?.required ? 'الحقل مطلوب' : null"
-                                [class.is-valid]="fc.name.valid && (fc.name.touched)"
-                                [class.is-invalid]="fc.name.invalid && (fc.name.touched)"
+                                <input class="form-control" id="validation01" type="text" formControlName="nameAr"
+                                [tooltip]="fc.nameAr.errors?.required ? 'الحقل مطلوب' : null"
+                                [class.is-valid]="fc.nameAr.valid && (fc.nameAr.touched)"
+                                [class.is-invalid]="fc.nameAr.invalid && (fc.nameAr.touched)"
                                      required
                                      appDisableWeritingEnglish
                                      placeholder="اسم المرحلة الدراسية"

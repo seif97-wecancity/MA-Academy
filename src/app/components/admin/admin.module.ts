@@ -28,6 +28,7 @@ import { ViewSubcourseComponent } from './subcourse/view-subcourse/view-subcours
 import { InsertSubcourseComponent } from './subcourse/insert-subcourse/insert-subcourse.component';
 import { ViewEducationlevelComponent } from './education_level/view-educationlevel/view-educationlevel.component';
 import { InsertEducationlevelComponent } from './education_level/insert-educationlevel/insert-educationlevel.component';
+import { ViewUserComponent } from './User/view-user/view-user.component';
 
  @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { InsertEducationlevelComponent } from './education_level/insert-educatio
     InsertSubcourseComponent,
     ViewEducationlevelComponent,
     InsertEducationlevelComponent,
+    ViewUserComponent,
   ],
   imports: [
     DxReportViewerModule,

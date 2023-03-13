@@ -3,7 +3,7 @@ import { FormGroup,FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { StudentsService } from './../../../../shared/API-Service/services/students.service';
-
+import { EducationLevelService } from './../../../../shared/API-Service/services/education-level.service';
 @Component({
   selector: 'app-insert-students',
   templateUrl: './insert-students.component.html',
@@ -15,10 +15,15 @@ Image:File;
 imageLogo:string;
 recordtoupdate:any;
 update:boolean = false;
-button:boolean = false
-  constructor(private _FormBuilder:FormBuilder, private _StudentsService:StudentsService, private _Router:Router) { }
+button:boolean = false;
+educationlevels:any;
+  constructor(private _FormBuilder:FormBuilder
+             ,private _StudentsService:StudentsService
+             ,private _Router:Router
+             ,private _EducationLevelService:EducationLevelService) { }
 
   ngOnInit(): void {
+    this.geteducationlevel();
     this._StudentsService.Student.subscribe((res) => {
       if(res == null){
         this.initiate();
@@ -41,11 +46,14 @@ button:boolean = false
   checkupdate(data?:any){
     this.StudentForm = this._FormBuilder.group({
       name: [data.name, Validators.required],
-      grade: [data.grade, Validators.required]
-      // Photo: ['', Validators.required]
+      education_level: [data.education_level, Validators.required]
     });
   }
-
+  geteducationlevel(){
+   this._EducationLevelService.GetEducationLevel().subscribe((res) => {
+    this.educationlevels = res;
+   }) 
+  }
   // imgFile
   getLogoUrl(event: any) {
     const reader = new FileReader();

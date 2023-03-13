@@ -31,15 +31,14 @@
                                     containerClass="" />
                             </div>
                             <!-- Education Level -->
-                            <div class="col-6 mb-3">
-                                <label for="validation01"><span class="validation-required">*</span> المرحلة الدراسية</label>
-                                <input class="form-control" id="validation01" type="text" formControlName="education_level"
-                                [tooltip]="fc.education_level.errors?.required ? 'الحقل مطلوب' : null"
-                                [class.is-valid]="fc.education_level.valid && (fc.education_level.touched)"
-                                [class.is-invalid]="fc.education_level.invalid && (fc.education_level.touched)"
-                                     required
-                                     placeholder="اكتب المرحلة الدراسية "
-                                    containerClass="" />
+                            <div class="col-lg-6 col-sm-12  mb-3">
+                                <label for="validationCustom05"><span class="validation-required">*</span> المرحلة الدراسية</label>
+                                <ng-select #Governorate  [selectOnTab]="true" formControlName="education_level"
+                                    class="form-control p-0" placeholder="اختر المرحلة الدراسية"
+                                    containerClass="" 
+                                    id="validationCustom05">
+                                    <ng-option *ngFor="let item of educationlevels" [value]="item.id">{{item.nameAr}}</ng-option>
+                                </ng-select>
                             </div>
                           
                         <!-- to insert image for the student  -->

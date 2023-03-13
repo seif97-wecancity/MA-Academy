@@ -183,15 +183,14 @@ export class NavService implements OnDestroy {
       badgeType: "success",
       children: [
         {
-          path: "admin/InsertUser",
+          path: "admin/ViewUser",
           title: "ادارة المستخدمين",
           type: "link",
         },
       ],
     },
- 
   ];
-// ===============
+// ======================================================
   MEGAMENUITEMS: Menu[] = [
     {
       title: "Error Pages",

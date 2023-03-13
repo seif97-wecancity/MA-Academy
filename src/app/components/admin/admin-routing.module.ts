@@ -19,6 +19,7 @@ import { InsertTeachersComponent } from "./teachers/insert-teachers/insert-teach
 import { ViewTeachersComponent } from "./teachers/view-teachers/view-teachers.component";
 import { ChangePasswordComponent } from "./User/change-password/change-password.component";
 import { UserComponent } from "./User/user/user.component";
+import { ViewUserComponent } from "./User/view-user/view-user.component";
 
 
 
@@ -57,8 +58,8 @@ const routes: Routes = [
                 component: InsertCoursesComponent,
             },
             {
-                path: "InsertUser",
-                component: UserComponent,
+                path: "ViewUser",
+                component: ViewUserComponent,
             },
             {
                 path: "ViewCourseLecture",

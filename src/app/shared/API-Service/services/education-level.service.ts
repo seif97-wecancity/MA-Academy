@@ -11,20 +11,21 @@ export class EducationLevelService {
   public EducationLevel = new BehaviorSubject(null);
   constructor(private _HttpClient:HttpClient) { }
   
-   // This to get the products 
+   // This to get the education level 
    GetEducationLevel():Observable<any>{
-    return this._HttpClient.get(`${environment.Server_URL}/Product/Get`);
+    return this._HttpClient.get(`${environment.Server_URL}/listEducationLevel`);
    }
- // This to post the products 
-  CreateEducationLevel(product):Observable<any>{
-   return this._HttpClient.post(`${environment.Server_URL}/Product/Create`, product  );
+ // This to post the education level 
+  CreateEducationLevel(record):Observable<any>{
+   return this._HttpClient.post(`${environment.Server_URL}/addEducationLevel`, record);
   }
- // This to Update the products
-  UpdateEducationLevel(product_update):Observable<any>{
-   return this._HttpClient.post(`${environment.Server_URL}/Product/Update`, product_update  );
+ // This to Update the education level
+  UpdateEducationLevel(record, id:number):Observable<any>{
+   return this._HttpClient.put(`${environment.Server_URL}/updateEducationLevel/${id}?`, record);
   }
-  // This to delete the products
+  // This to delete the education level
  DeleteEducationLevel(id):Observable<any>{
-   return this._HttpClient.get(`${environment.Server_URL}/Product/Delete?id=${id}` ); 
+   return this._HttpClient.delete(`${environment.Server_URL}/deleteEducationLevel/${id}?`); 
  }
+
 }

@@ -20,6 +20,7 @@ export class ViewCourseContentComponent implements OnInit {
   getcoursecontent(){
   this._CourseContentService.GetCourseContent().subscribe((res) => {
     this.courselectures = res;
+    debugger
   })
   }
 // showimage(data){
