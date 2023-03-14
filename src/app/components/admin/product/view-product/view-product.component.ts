@@ -13,6 +13,7 @@ import { ProductService } from '../../../../shared/API-Service/services/product.
 export class ViewProductComponent implements OnInit {
 products:object [] = [];
 img : string = Image;
+selectedkeywords:any[];
   constructor(private _Router:Router, private _ProductService:ProductService) { 
     
   }

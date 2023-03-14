@@ -18,13 +18,13 @@
                     (ngSubmit)="onSubmit()" 
                     novalidate>
                         <div class="form-row">
-                            <!-- Name  -->
+                            <!-- subjectName  -->
                             <div class="col-6 mb-3">
                                 <label for="validation01"><span class="validation-required">*</span> اسم الكورس</label>
-                                <input class="form-control" id="validation01" type="text" formControlName="name"
-                                [tooltip]="fc.name.errors?.required ? 'الحقل مطلوب' : null"
-                                [class.is-valid]="fc.name.valid && (fc.name.touched)"
-                                [class.is-invalid]="fc.name.invalid && (fc.name.touched)"
+                                <input class="form-control" id="validation01" type="text" formControlName="subjectName"
+                                [tooltip]="fc.subjectName.errors?.required ? 'الحقل مطلوب' : null"
+                                [class.is-valid]="fc.subjectName.valid && (fc.subjectName.touched)"
+                                [class.is-invalid]="fc.subjectName.invalid && (fc.subjectName.touched)"
                                      required
                                      placeholder="اسم الكورس"
                                     containerClass="" />

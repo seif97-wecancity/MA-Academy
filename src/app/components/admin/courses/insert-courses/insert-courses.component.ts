@@ -38,14 +38,14 @@ QrCode:string = null;
 
   initiate(){
     this.CourseForm = this._FormBuilder.group({
-      name: ['', Validators.required],
+      subjectName: ['', Validators.required],
       // Educationlevel: ['', Validators.required],
       // QrCode: ['', Validators.required],
     });
   }
   checkupdate(data:any){
     this.CourseForm = this._FormBuilder.group({
-      name: [data.name, Validators.required],
+      subjectName: [data.subjectName, Validators.required],
       // Educationlevel: ['', Validators.required],
       // QrCode: ['', Validators.required],
     });

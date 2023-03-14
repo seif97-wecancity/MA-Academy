@@ -39,7 +39,7 @@ recordtoupdate:any;
       this.courses = res;
     });
     this._TeachersService.GetTeacher().subscribe((res) => {
-      this.teachers = res;
+      this.teachers = res.data;
     });
   }
 

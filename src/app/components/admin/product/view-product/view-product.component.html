@@ -44,7 +44,15 @@
                                         <td class="p-2" style="height: 50px;width: 50px;">
                                             <img [src]="img + product.image"  class="w-100 rounded-circle">
 
-                     
+                                            <div class="col-lg-6 col-sm-12  mb-3">
+                                                <label for="validationCustom06"><span class="validation-required">*</span> Keywords</label>
+                                                <ng-multiselect-dropdown
+                                                       [placeholder]="'Select Your keyword'"
+                                                       [settings]="dropdownSettings"
+                                                       [data]="keyword"
+                                                      [(ngModel)]="selectedkeywords">
+                                                                 </ng-multiselect-dropdown>
+                                            </div>
                                         <td class="font-style chose">
                                             <!-- <ng-template #elseBlock>  -->
                                                 <button class="btn  pull-right"  style="color: red; padding: 7px"

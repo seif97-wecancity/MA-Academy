@@ -61,16 +61,16 @@ data:any [];
   initiate(){
     this.TeacherForm = this._FormBuilder.group({
       name: ['', Validators.required],
-      education_level: ['', Validators.required],
-      subject: ['', Validators.required],
+      educationId: ['', Validators.required],
+      subjectId: ['', Validators.required],
      
     });
   }
   checkupdate(data:any){
     this.TeacherForm = this._FormBuilder.group({
       name: [data.name, Validators.required],
-      education_level: [data.education_level, Validators.required],
-      subject: [data.subject, Validators.required],
+      educationId: [data.educationId, Validators.required],
+      subjectId: [data.subjectId, Validators.required],
     });
   }
     // imgFile

@@ -31,7 +31,7 @@
                                     containerClass="" />
                             </div>
                             <!-- eduction level name  -->
-                            <div class="col-6 mb-3">
+                            <!-- <div class="col-6 mb-3">
                                 <label for="validation01"><span class="validation-required">*</span>المرحلة الدراسية </label>
                                 <input class="form-control" id="validation01" type="text" formControlName="education_level"
                                 [tooltip]="fc.education_level.errors?.required ? 'الحقل مطلوب' : null"
@@ -41,32 +41,32 @@
                                      required
                                      placeholder="مثال : ابتدائي"
                                     containerClass="" />
-                            </div>
+                            </div> -->
 
                              <!-- choose education level  -->
-                             <!-- <div class="col-lg-6 col-sm-12  mb-3">
+                             <div class="col-lg-6 col-sm-12  mb-3">
                                 <label for="validationCustom05"><span class="validation-required">*</span> المرحلة الدراسية</label>
-                                <ng-select  [selectOnTab]="true" formControlName="education_level"
+                                <ng-select  [selectOnTab]="true" formControlName="educationId"
                                     class="form-control p-0" placeholder="اختر المرحلة الدراسية"
                                     containerClass="" 
                                     id="validationCustom05">
-                                    <ng-option *ngFor="let item of educationlevels" [value]="item.id" >{{item.name}}</ng-option>
+                                    <ng-option *ngFor="let item of educationlevels" [value]="item.id" >{{item.nameAr}}</ng-option>
                                 </ng-select>
-                            </div> -->
+                            </div>
                             
                              <!-- choose subject  -->
-                             <!-- <div class="col-lg-6 col-sm-12  mb-3">
+                             <div class="col-lg-6 col-sm-12  mb-3">
                                 <label for="validationCustom05"><span class="validation-required">*</span> المادة</label>
-                                <ng-select  [selectOnTab]="true" formControlName="subject"
+                                <ng-select  [selectOnTab]="true" formControlName="subjectId"
                                     class="form-control p-0" placeholder="اختر المادة "
                                     containerClass="" 
                                     id="validationCustom05">
-                                    <ng-option *ngFor="let item of subjects" [value]="item.id">{{item.name}}</ng-option>
+                                    <ng-option *ngFor="let item of subjects" [value]="item.id">{{item.subjectName}}</ng-option>
                                 </ng-select>
-                            </div> -->
+                            </div>
 
                             <!-- subject name  -->
-                            <div class="col-6 mb-3">
+                            <!-- <div class="col-6 mb-3">
                                 <label for="validation01"><span class="validation-required">*</span> المادة</label>
                                 <input class="form-control" id="validation01" type="text" formControlName="subject"
                                 [tooltip]="fc.subject.errors?.required ? 'الحقل مطلوب' : null"
@@ -76,7 +76,7 @@
                                      required
                                      placeholder="اكتب المادة"
                                     containerClass="" />
-                            </div>
+                            </div> -->
                                                                      <!-- select subjects -->
                      <!-- <div class="col-lg-6 col-sm-12  mb-3" style="margin-top: 7px;">
                         <label for="validationCustom06"><span class="validation-required">*</span> اسم المادة او المواد</label>

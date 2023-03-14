@@ -42,7 +42,17 @@
                                      placeholder="اسم المرحلة الدراسية"
                                     containerClass="" />
                             </div>
-                           
+                           <!-- multiselect for subjects -->
+                           <div class="col-lg-6 col-sm-12  mb-3">
+                            <label for="validationCustom06"><span class="validation-required">*</span> المواد</label>
+                            <ng-multiselect-dropdown
+                                   [placeholder]="'اختر المواد'"
+                                   [settings]="dropdownSettings"
+                                   [data]="subjects"
+                                  [(ngModel)]="selectedsubjects" 
+                                  [ngModelOptions]="{standalone: true}" >
+                                             </ng-multiselect-dropdown>
+                        </div>
                         </div>
                         <br>
                         <ng-template #elseBlock>

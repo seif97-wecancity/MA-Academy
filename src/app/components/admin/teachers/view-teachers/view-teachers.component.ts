@@ -19,7 +19,7 @@ teachers:any = [];
 
 getteachers(){
    this._TeachersService.GetTeacher().subscribe((res) => {
-    this.teachers = res;
+    this.teachers = res.data;
    })
 }
 

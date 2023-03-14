@@ -3,6 +3,8 @@ import { FormGroup,FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { EducationLevelService } from './../../../../shared/API-Service/services/education-level.service';
+import { CoursesService } from './../../../../shared/API-Service/services/courses.service';
+import { IDropdownSettings, } from 'ng-multiselect-dropdown';
 
 @Component({
   selector: 'app-insert-educationlevel',
@@ -14,11 +16,24 @@ educationlevelForm:FormGroup;
 button:boolean = false;
 update:boolean = false;
 recordtoupdate:any;
+subjects:any;
+dropdownSettings:any = {};
+selectedsubjects:any [];
+
   constructor(private _EducationLevelService:EducationLevelService
              ,private _FormBuilder:FormBuilder
-             ,private _Router:Router) { }
+             ,private _Router:Router
+             ,private _CoursesService:CoursesService) { }
 
   ngOnInit(): void {
+    this.dropdownSettings = {
+      singleSelection: false,
+      idField: 'id',
+      textField: 'subjectName',
+      selectAllText: 'Select All',
+      unSelectAllText: 'UnSelect All'
+    };
+    this.getsubjects();
     this._EducationLevelService.EducationLevel.subscribe((res) => {
       if( res == null){
         this.initiate();
@@ -30,7 +45,6 @@ recordtoupdate:any;
     })
     
   }
-
   initiate(){
     this.educationlevelForm = this._FormBuilder.group({
       nameEn: ['', Validators.required],
@@ -43,7 +57,11 @@ recordtoupdate:any;
       nameAr: [data.nameAr, Validators.required]
     });
   }
-
+getsubjects(){
+  this._CoursesService.GetCourse().subscribe((res) => {
+    this.subjects = res;
+  })
+}
 get fc(){
   return this.educationlevelForm.controls;
 }
