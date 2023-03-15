@@ -29,6 +29,16 @@
                                      placeholder="اسم الكورس"
                                     containerClass="" />
                             </div>
+                              <!-- Education Level  -->
+                              <div class="col-lg-6 col-sm-12  mb-3">
+                                <label for="validationCustom05"><span class="validation-required">*</span> المرحلة الدراسية</label>
+                                <ng-select  [selectOnTab]="true" formControlName="educationId"
+                                    class="form-control p-0" placeholder="اختر المادة "
+                                    containerClass="" 
+                                    id="validationCustom05">
+                                    <ng-option *ngFor="let item of educationlevels" [value]="item.id">{{item.nameAr}}</ng-option>
+                                </ng-select>
+                            </div>
                             <!-- educationlevel  -->
                             <!-- <div class="col-6 mb-3">
                                 <label for="validation01"><span class="validation-required">*</span>المرحلة الدراسية</label>

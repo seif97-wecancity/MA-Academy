@@ -19,7 +19,7 @@ educationlevels:any [];
 
   getedicationlevels(){
     this._EducationLevelService.GetEducationLevel().subscribe((res) => {
-      this.educationlevels = res;
+      this.educationlevels = res.data;
     })
   }
 

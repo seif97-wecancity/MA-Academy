@@ -3,6 +3,7 @@ import { FormGroup,FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { SubcourseService } from './../../../../shared/API-Service/services/subcourse.service';
+import { CoursesService } from './../../../../shared/API-Service/services/courses.service';
 
 @Component({
   selector: 'app-insert-subcourse',
@@ -14,10 +15,14 @@ SubSubjectForm:FormGroup;
 button:boolean = false;
 update:boolean = false;
 recordtoupdate:any ;
-  constructor(private _SubcourseService:SubcourseService, private _FormBuilder:FormBuilder, private _Router:Router) { }
+courses:any [];
+  constructor(private _SubcourseService:SubcourseService
+             ,private _FormBuilder:FormBuilder
+             ,private _Router:Router
+             ,private _CoursesService:CoursesService) { }
 
   ngOnInit(): void {
-    
+      this.getdropdown();
      this._SubcourseService.SubSubject.subscribe((res) => {
       if( res == null){
         this.initiate();
@@ -26,16 +31,13 @@ recordtoupdate:any ;
         this.update = true;
         this.checkupdate(this.recordtoupdate);
       }
-     })
-
-    
+     }) 
   }
-
-  
   initiate(){
     this.SubSubjectForm = this._FormBuilder.group({
-      name: ['', Validators.required],
-      lessons_numb: ['', Validators.required]
+      subSubjectsName: ['', Validators.required],
+      lessonsNumb: ['', Validators.required],
+      subjectId: ['', Validators.required],
     });
   }
   get fc(){
@@ -44,13 +46,17 @@ recordtoupdate:any ;
   
   checkupdate(data?:any){
     this.SubSubjectForm = this._FormBuilder.group({
-      name: [data.name, Validators.required],
-      lessons_numb: [data.lessons_numb, Validators.required]
-      
+      subSubjectsName: [data.subSubjectsName, Validators.required],
+      lessonsNumb: [data.lessonsNumb, Validators.required],
+      subjectId: [data.subjectId, Validators.required]
     });
   }
 
-
+getdropdown(){
+   this._CoursesService.GetCourse().subscribe((res) => {
+    this.courses = res.data;
+   })
+}
 
   onSubmit(){
     this.button = true;

@@ -39,28 +39,28 @@ educationlevels:any;
 
   initiate(){
     this.StudentForm = this._FormBuilder.group({
-      name: ['', Validators.required],
+      studentName: ['', Validators.required],
       educationId: ['', Validators.required],
-      image: ['', Validators.required]
+      studentImage: ['', Validators.required]
     });
   }
   checkupdate(data?:any){
     this.StudentForm = this._FormBuilder.group({
-      name: [data.name, Validators.required],
+      studentName: [data.name, Validators.required],
       educationId: [data.educationId, Validators.required],
-      image: [data.image, Validators.required],
+      studentImage: [data.studentImage, Validators.required],
     });
     
   }
   appendeddata(){
     this.StudentFormdata = new FormData();
-    this.StudentFormdata.append("name", this.StudentForm.value.name);
+    this.StudentFormdata.append("studentName", this.StudentForm.value.studentName);
     this.StudentFormdata.append("educationId", this.StudentForm.value.educationId);
-    this.StudentFormdata.append("image", this.Image);
+    this.StudentFormdata.append("studentImage", this.Image);
   }
   geteducationlevel(){
    this._EducationLevelService.GetEducationLevel().subscribe((res) => {
-    this.educationlevels = res;
+    this.educationlevels = res.data;
    }) 
   }
   // imgFile

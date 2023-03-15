@@ -19,7 +19,8 @@ img:string = 'https://www.maapp.misrpedia.com/storage/app/';
 
 getstudents(){
   this._StudentsService.GetStudent().subscribe((res) => {
-    this.students = res; 
+    this.students = res.data; 
+    debugger
   })
 }
 

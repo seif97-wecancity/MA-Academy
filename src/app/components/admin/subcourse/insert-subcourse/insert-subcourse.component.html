@@ -18,32 +18,41 @@
                     (ngSubmit)="onSubmit()" 
                     novalidate>
                         <div class="form-row">
-                            <!-- Student Name  -->
+                            <!-- SubSubject Name  -->
                             <div class="col-6 mb-3">
                                 <label for="validation01"><span class="validation-required">*</span> اسم تصنيف المادة</label>
-                                <input class="form-control" id="validation01" type="text" formControlName="name"
-                                [tooltip]="fc.name.errors?.required ? 'الحقل مطلوب' : null"
-                                [class.is-valid]="fc.name.valid && (fc.name.touched)"
-                                [class.is-invalid]="fc.name.invalid && (fc.name.touched)"
+                                <input class="form-control" id="validation01" type="text" formControlName="subSubjectsName"
+                                [tooltip]="fc.subSubjectsName.errors?.required ? 'الحقل مطلوب' : null"
+                                [class.is-valid]="fc.subSubjectsName.valid && (fc.subSubjectsName.touched)"
+                                [class.is-invalid]="fc.subSubjectsName.invalid && (fc.subSubjectsName.touched)"
                                 
                                      required
                                      placeholder="اسم تصنيف الماده "
                                     containerClass="" />
                             </div>
-                            <!-- Student Age  -->
+                            <!-- number of lessons -->
                             <div class="col-6 mb-3">
                                 <label for="validation01"><span class="validation-required">*</span> عدد الحصص</label>
-                                <input class="form-control" id="validation01" type="text" formControlName="lessons_numb"
-                                [tooltip]="fc.lessons_numb.errors?.required ? 'الحقل مطلوب' : null"
-                                [class.is-valid]="fc.lessons_numb.valid && (fc.lessons_numb.touched)"
-                                [class.is-invalid]="fc.lessons_numb.invalid && (fc.lessons_numb.touched)"
+                                <input class="form-control" id="validation01" type="text" formControlName="lessonsNumb"
+                                [tooltip]="fc.lessonsNumb.errors?.required ? 'الحقل مطلوب' : null"
+                                [class.is-valid]="fc.lessonsNumb.valid && (fc.lessonsNumb.touched)"
+                                [class.is-invalid]="fc.lessonsNumb.invalid && (fc.lessonsNumb.touched)"
                                 onlyNumbers
                                      required
                                      placeholder="ادخل عدد الحصص"
                                     containerClass="" />
                             </div>
                           
-                   
+                                <!-- Courses  -->
+                              <div class="col-lg-6 col-sm-12  mb-3">
+                                <label for="validationCustom05"><span class="validation-required">*</span> المادة</label>
+                                <ng-select  [selectOnTab]="true" formControlName="subjectId"
+                                    class="form-control p-0" placeholder="اختر المادة "
+                                    containerClass="" 
+                                    id="validationCustom05">
+                                    <ng-option *ngFor="let item of courses" [value]="item.id">{{item.subjectName}}</ng-option>
+                                </ng-select>
+                            </div>
                            
                         </div>
 

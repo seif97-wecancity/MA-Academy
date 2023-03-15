@@ -28,6 +28,7 @@
                                         <th scope="col"></th>
                                         <th scope="col">اسم تصنيف المادة </th>
                                         <th scope="col">عدد الحصص</th>
+                                        <th scope="col">المادة</th>
                                              
                                         <th scope="col"></th>
                                     </tr>
@@ -35,9 +36,9 @@
                                 <tbody>
                                     <tr *ngFor="let view of subsubjects;let x = index" class=" ">
                                         <td scope="row" class="p-2">{{x+1}}</td>
-                                        <td scope="row" class="p-2">{{view.name}}</td>
-                                        <td scope="row" class="p-2">{{view.lessons_numb}}</td>
-                                        
+                                        <td scope="row" class="p-2">{{view.subSubjectsName}}</td>
+                                        <td scope="row" class="p-2">{{view.lessonsNumb}}</td>
+                                        <td scope="row" class="p-2">{{view.subjectName}}</td>
                                             <td class="font-style chose">
                                                 <button class="btn pull-right"
                                                     style="color: rgba(35, 118, 241, 0.667); padding: 7px"

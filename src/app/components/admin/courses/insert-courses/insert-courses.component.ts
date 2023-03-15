@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { NgxQrcodeElementTypes, NgxQrcodeErrorCorrectionLevels } from '@techiediaries/ngx-qrcode';
 import Swal from 'sweetalert2';
 import { CoursesService} from '../../../../shared/API-Service/services/courses.service';
+import { EducationLevelService} from '../../../../shared/API-Service/services/education-level.service';
 
 @Component({
   selector: 'app-insert-courses',
@@ -21,9 +22,14 @@ title:string = 'app';
 elementType:string = NgxQrcodeElementTypes.URL;
 correctionLevel  = NgxQrcodeErrorCorrectionLevels.HIGH;
 QrCode:string = null;
-  constructor(private _FormBuilder:FormBuilder, private _CoursesService:CoursesService, private _Router:Router) { }
+educationlevels:any [];
+  constructor(private _FormBuilder:FormBuilder
+             ,private _CoursesService:CoursesService
+             ,private _Router:Router
+             ,private _EducationLevelService:EducationLevelService) { }
 
   ngOnInit(): void {
+    this.getdropdown();
     this._CoursesService.Subject.subscribe((res) => {
       if(res == null){
         this.initiate();
@@ -39,14 +45,14 @@ QrCode:string = null;
   initiate(){
     this.CourseForm = this._FormBuilder.group({
       subjectName: ['', Validators.required],
-      // Educationlevel: ['', Validators.required],
+      educationId: ['', Validators.required],
       // QrCode: ['', Validators.required],
     });
   }
   checkupdate(data:any){
     this.CourseForm = this._FormBuilder.group({
       subjectName: [data.subjectName, Validators.required],
-      // Educationlevel: ['', Validators.required],
+      educationId: [data.educationId, Validators.required],
       // QrCode: ['', Validators.required],
     });
   }
@@ -65,6 +71,11 @@ QrCode:string = null;
   }
   get fc(){
     return this.CourseForm.controls;
+  }
+  getdropdown(){
+    this._EducationLevelService.GetEducationLevel().subscribe((res) => {
+      this.educationlevels = res.data;
+    });
   }
   
   onSubmit(){

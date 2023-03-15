@@ -52,15 +52,15 @@ data:any [];
 
   getdropdowns(){
   this._EducationLevelService.GetEducationLevel().subscribe((res) => {
-    this.educationlevels = res;
+    this.educationlevels = res.data;
   })
   this._CoursesService.GetCourse().subscribe((res) => {
-    this.subjects = res;
+    this.subjects = res.data;
   })
   }
   initiate(){
     this.TeacherForm = this._FormBuilder.group({
-      name: ['', Validators.required],
+      teacherName: ['', Validators.required],
       educationId: ['', Validators.required],
       subjectId: ['', Validators.required],
      
@@ -68,7 +68,7 @@ data:any [];
   }
   checkupdate(data:any){
     this.TeacherForm = this._FormBuilder.group({
-      name: [data.name, Validators.required],
+      teacherName: [data.name, Validators.required],
       educationId: [data.educationId, Validators.required],
       subjectId: [data.subjectId, Validators.required],
     });

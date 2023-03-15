@@ -21,10 +21,10 @@
                             <!-- Teacher Name  -->
                             <div class="col-6 mb-3">
                                 <label for="validation01"><span class="validation-required">*</span> اسم المدرس</label>
-                                <input class="form-control" id="validation01" type="text" formControlName="name"
-                                [tooltip]="fc.name.errors?.required ? 'الحقل مطلوب' : null"
-                                [class.is-valid]="fc.name.valid && (fc.name.touched)"
-                                [class.is-invalid]="fc.name.invalid && (fc.name.touched)"
+                                <input class="form-control" id="validation01" type="text" formControlName="teacherName"
+                                [tooltip]="fc.teacherName.errors?.required ? 'الحقل مطلوب' : null"
+                                [class.is-valid]="fc.teacherName.valid && (fc.teacherName.touched)"
+                                [class.is-invalid]="fc.teacherName.invalid && (fc.teacherName.touched)"
                                 
                                      required
                                      placeholder="الأسم"

@@ -20,7 +20,7 @@ subsubjects:any [];
 
   getsubsubjects(){
     this._SubcourseService.GetSubCourse().subscribe((res) => {
-      this.subsubjects = res;
+      this.subsubjects = res.data;
     })
   }
   delete(id : number){

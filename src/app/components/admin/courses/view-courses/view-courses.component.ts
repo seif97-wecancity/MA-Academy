@@ -18,7 +18,7 @@ courses:any [];
 
   getcourses(){
     this._CoursesService.GetCourse().subscribe((res) => {
-      this.courses = res;
+      this.courses = res.data;
     })
   }
   update(record:object){

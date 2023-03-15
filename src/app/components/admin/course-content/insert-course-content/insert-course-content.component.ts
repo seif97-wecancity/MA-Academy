@@ -5,6 +5,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 import { CourseContentService } from './../../../../shared/API-Service/services/course-content.service';
+import { SubcourseService } from './../../../../shared/API-Service/services/subcourse.service';
 @Component({
   selector: 'app-insert-course-content',
   templateUrl: './insert-course-content.component.html',
@@ -13,6 +14,7 @@ import { CourseContentService } from './../../../../shared/API-Service/services/
 export class InsertCourseContentComponent implements OnInit {
 courses:any [];
 teachers:any [];
+subSubjects:any [];
 CourseLectureForm:FormGroup;
 CourseLectureFormData:FormData;
 Image : File;
@@ -26,7 +28,8 @@ recordtoupdate:any;
              ,private _CourseContentService :CourseContentService 
              ,private _TeachersService:TeachersService
              ,private _FormBuilder:FormBuilder
-             ,private _Router:Router) { }
+             ,private _Router:Router
+             ,private _SubcourseService:SubcourseService) { }
 
   ngOnInit(): void {
     this.getdropdowns();
@@ -36,38 +39,44 @@ recordtoupdate:any;
 
   getdropdowns(){
     this._CoursesService.GetCourse().subscribe((res) => {
-      this.courses = res;
+      this.courses = res.data;
+      debugger
     });
     this._TeachersService.GetTeacher().subscribe((res) => {
       this.teachers = res.data;
+      debugger
     });
+    this._SubcourseService.GetSubCourse().subscribe((res) =>{
+      this.subSubjects = res.data;
+      debugger
+    })
   }
 
   initiate(){
     this.CourseLectureForm = this._FormBuilder.group({
-      name: ['', Validators.required],
-      // lessonnumber: ['', Validators.required],
+      subjectContentName: ['', Validators.required],
       price: ['', Validators.required],
-      image: ['', Validators.required],
+      subjectContentImage: ['', Validators.required],
+      subSubjectId: ['', Validators.required],
       videoURL: ['', Validators.required],
       teacherId: ['', Validators.required],
       description: ['', Validators.required],
-      courseId: ['', Validators.required]
+      subjectId: ['', Validators.required]
     });
   }
   get fc(){
     return this.CourseLectureForm.controls;
   }
-
   appendform(){
     this.CourseLectureFormData = new FormData();
-    this.CourseLectureFormData.append("name", this.CourseLectureForm.value.name);
+    this.CourseLectureFormData.append("subjectContentName", this.CourseLectureForm.value.subjectContentName);
     this.CourseLectureFormData.append("description", this.CourseLectureForm.value.description);
-    this.CourseLectureFormData.append("subject_id", this.CourseLectureForm.value.courseId);
-    this.CourseLectureFormData.append("teacher_id", this.CourseLectureForm.value.teacherId);
+    this.CourseLectureFormData.append("subjectId", this.CourseLectureForm.value.subjectId);
+    this.CourseLectureFormData.append("subSubjectId", this.CourseLectureForm.value.subSubjectId);
+    this.CourseLectureFormData.append("teacherId", this.CourseLectureForm.value.teacherId);
     this.CourseLectureFormData.append("video_url", this.CourseLectureForm.value.videoURL);
     this.CourseLectureFormData.append("price", this.CourseLectureForm.value.price);
-    this.CourseLectureFormData.append("image", this.Image);
+    this.CourseLectureFormData.append("subjectContentImage", this.Image);
     this.CourseLectureFormData.append("file", this.File);
   }
   // imgFile
@@ -94,7 +103,6 @@ recordtoupdate:any;
       };
     }
   }
-  
   onSubmit(){
     this.button = true;
     if( this.CourseLectureForm.status == "VALID" && this.update == false){
