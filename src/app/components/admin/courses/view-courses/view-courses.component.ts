@@ -47,19 +47,19 @@ courses:any [];
           });
        this.getcourses();
         },(err) => {
-          // Swal.fire({
-          //   icon: 'error',
-          //   title: 'خطأ',
-          //   text:err.error.message    
-          // })
-          // this.getcourses();
           Swal.fire({
-            icon: "success",
-            title: "تم المسح بنجاح",
-            showConfirmButton: false,
-            timer: 1500,
-          });
-       this.getcourses();
+            icon: 'error',
+            title: 'خطأ',
+            text:err.error.message    
+          })
+          this.getcourses();
+      //     Swal.fire({
+      //       icon: "success",
+      //       title: "تم المسح بنجاح",
+      //       showConfirmButton: false,
+      //       timer: 1500,
+      //     });
+      //  this.getcourses();
         },() => {
           console.log("completed");
         })

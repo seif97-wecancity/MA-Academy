@@ -46,7 +46,7 @@ educationlevels:any;
   }
   checkupdate(data?:any){
     this.StudentForm = this._FormBuilder.group({
-      studentName: [data.name, Validators.required],
+      studentName: [data.studentName, Validators.required],
       educationId: [data.educationId, Validators.required],
       studentImage: [data.studentImage, Validators.required],
     });

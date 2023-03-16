@@ -83,7 +83,7 @@
                                     class="form-control p-0" placeholder="اختر مادة"
                                     containerClass="" 
                                     id="validationCustom05">
-                                    <ng-option *ngFor="let item of courses" [value]="item.id" >{{item.subjectName}}</ng-option>
+                                    <ng-option *ngFor="let item of courses" [value]="item.subjectId" >{{item.subjectName}}</ng-option>
                                 </ng-select>
                             </div>
                             <!-- choose sub course -->
@@ -93,7 +93,7 @@
                                     class="form-control p-0" placeholder="اختر تصنيف المادة"
                                     containerClass="" 
                                     id="validationCustom05">
-                                    <ng-option *ngFor="let item of subSubjects" [value]="item.id" >{{item.subSubjectsName}}</ng-option>
+                                    <ng-option *ngFor="let item of subSubjects" [value]="item.subSubjectsId" >{{item.subSubjectsName}}</ng-option>
                                 </ng-select>
                             </div>
                             <!-- choose teacher -->
@@ -103,7 +103,7 @@
                                     class="form-control p-0" placeholder="اختر المدرس"
                                     containerClass="" 
                                     id="validationCustom05">
-                                    <ng-option *ngFor="let item of teachers" [value]="item.id" >{{item.teacherName}}</ng-option>
+                                    <ng-option *ngFor="let item of teachers" [value]="item.teacherId" >{{item.teacherName}}</ng-option>
                                 </ng-select>
                             </div>
                             <div class="col-lg-6 col-sm-12  mb-3">
@@ -121,7 +121,7 @@
                         </div>
               <div class="col-6 my-4" style="padding: 1%;">
                 <img  src="{{ fileLogo }}" style="width: 60%; height: 220px;" class="image-style p-2" *ngIf="fileLogo != null"/>
-               <input type="file" accept="pdf/*" #file id="getFile"
+               <input type="file" formControlName="file" accept="pdf/*" #file id="getFile"
                 style="display: none" (change)="getFileUrl($event)" />
             <button type="button" onclick="document.getElementById('getFile').click()"
                 class="btn  d-block"  style="width: 60%;">

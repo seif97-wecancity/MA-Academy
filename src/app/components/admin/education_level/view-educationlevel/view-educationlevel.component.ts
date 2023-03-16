@@ -44,19 +44,12 @@ educationlevels:any [];
           });
        this.getedicationlevels();
         },(err) => {
-          // Swal.fire({
-          //   icon: 'error',
-          //   title: 'خطأ',
-          //   text:err.error.message    
-          // })
-          // this.getedicationlevels();
           Swal.fire({
-            icon: "success",
-            title: "تم المسح بنجاح",
-            showConfirmButton: false,
-            timer: 1500,
-          });
-       this.getedicationlevels();
+            icon: 'error',
+            title: 'خطأ',
+            text:err.error.message    
+          })
+          this.getedicationlevels();
         },() => {
           console.log("completed");
         })

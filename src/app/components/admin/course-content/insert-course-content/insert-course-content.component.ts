@@ -40,15 +40,13 @@ recordtoupdate:any;
   getdropdowns(){
     this._CoursesService.GetCourse().subscribe((res) => {
       this.courses = res.data;
-      debugger
     });
+    debugger
     this._TeachersService.GetTeacher().subscribe((res) => {
       this.teachers = res.data;
-      debugger
     });
     this._SubcourseService.GetSubCourse().subscribe((res) =>{
       this.subSubjects = res.data;
-      debugger
     })
   }
 

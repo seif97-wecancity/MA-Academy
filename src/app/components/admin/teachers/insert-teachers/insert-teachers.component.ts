@@ -68,7 +68,7 @@ data:any [];
   }
   checkupdate(data:any){
     this.TeacherForm = this._FormBuilder.group({
-      teacherName: [data.name, Validators.required],
+      teacherName: [data.teacherName, Validators.required],
       educationId: [data.educationId, Validators.required],
       subjectId: [data.subjectId, Validators.required],
     });
@@ -112,7 +112,8 @@ data:any [];
              this.button = false;
        })
     }else if(this.TeacherForm.status == "VALID" && this.update == true){
-      this._TeachersService.UpdateTeacher(this.TeacherForm.value , this.recordtoupdate.id).subscribe((res) => {
+      this._TeachersService.UpdateTeacher(this.TeacherForm.value, this.recordtoupdate.id).subscribe((res) => {
+        debugger
         Swal.fire({
          icon: "success",
          title: "تم تعديل الكورس بنجاح",

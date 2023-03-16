@@ -25,7 +25,6 @@
                                 [tooltip]="fc.subSubjectsName.errors?.required ? 'الحقل مطلوب' : null"
                                 [class.is-valid]="fc.subSubjectsName.valid && (fc.subSubjectsName.touched)"
                                 [class.is-invalid]="fc.subSubjectsName.invalid && (fc.subSubjectsName.touched)"
-                                
                                      required
                                      placeholder="اسم تصنيف الماده "
                                     containerClass="" />
@@ -33,7 +32,7 @@
                             <!-- number of lessons -->
                             <div class="col-6 mb-3">
                                 <label for="validation01"><span class="validation-required">*</span> عدد الحصص</label>
-                                <input class="form-control" id="validation01" type="text" formControlName="lessonsNumb"
+                                <input class="form-control" id="validation01" type="number" formControlName="lessonsNumb"
                                 [tooltip]="fc.lessonsNumb.errors?.required ? 'الحقل مطلوب' : null"
                                 [class.is-valid]="fc.lessonsNumb.valid && (fc.lessonsNumb.touched)"
                                 [class.is-invalid]="fc.lessonsNumb.invalid && (fc.lessonsNumb.touched)"
@@ -50,7 +49,7 @@
                                     class="form-control p-0" placeholder="اختر المادة "
                                     containerClass="" 
                                     id="validationCustom05">
-                                    <ng-option *ngFor="let item of courses" [value]="item.id">{{item.subjectName}}</ng-option>
+                                    <ng-option *ngFor="let item of courses" [value]="item.subjectId">{{item.subjectName}}</ng-option>
                                 </ng-select>
                             </div>
                            

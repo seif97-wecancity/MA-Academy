@@ -59,7 +59,7 @@ selectedsubjects:any [];
   }
 getsubjects(){
   this._CoursesService.GetCourse().subscribe((res) => {
-    this.subjects = res;
+    this.subjects = res.data;
   })
 }
 get fc(){

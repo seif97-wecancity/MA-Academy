@@ -20,7 +20,6 @@ export class ViewCourseContentComponent implements OnInit {
   getcoursecontent(){
   this._CourseContentService.GetCourseContent().subscribe((res) => {
     this.courselectures = res.data;
-    debugger
   })
   }
 // showimage(data){
@@ -52,18 +51,18 @@ delete(id : number){
         });
      this.getcoursecontent();
       },(err) => {
-        // Swal.fire({
-        //   icon: 'error',
-        //   title: 'خطأ',
-        //   text:err.error.message    
-        // })
-        // this.getcoursecontent();
         Swal.fire({
-          icon: "success",
-          title: "تم المسح بنجاح",
-          showConfirmButton: false,
-          timer: 1500,
-        });
+          icon: 'error',
+          title: 'خطأ',
+          text:err.error.message    
+        })
+        this.getcoursecontent();
+        // Swal.fire({
+        //   icon: "success",
+        //   title: "تم المسح بنجاح",
+        //   showConfirmButton: false,
+        //   timer: 1500,
+        // });
      this.getcoursecontent();
       },() => {
         console.log("completed");
