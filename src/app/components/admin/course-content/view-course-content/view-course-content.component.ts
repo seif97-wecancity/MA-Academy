@@ -71,7 +71,7 @@ delete(id : number){
   }) 
 }
 update(record:object){
-  // this._CourseContentService.coursecontent.next(record);
-  this._Router.navigate(['content/admin/InsertCourseContent']);
+  this._CourseContentService.coursecontent.next(record);
+  this._Router.navigate(['content/admin/InsertCourseLecture']);
 }
 }

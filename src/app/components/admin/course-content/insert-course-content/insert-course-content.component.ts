@@ -33,7 +33,17 @@ recordtoupdate:any;
 
   ngOnInit(): void {
     this.getdropdowns();
-    this.initiate();
+    this._CourseContentService.coursecontent.subscribe((res) => {
+      if( res == null){
+        this.initiate();
+      }else{
+        this.recordtoupdate = res;
+         this.checkedit(this.recordtoupdate);
+         this.update = true;
+      }
+    })
+    
+    
   }
 
 
@@ -60,6 +70,18 @@ recordtoupdate:any;
       teacherId: ['', Validators.required],
       description: ['', Validators.required],
       subjectId: ['', Validators.required]
+    });
+  }
+  checkedit(data:any){
+    this.CourseLectureForm = this._FormBuilder.group({
+      subjectContentName: [data.subjectContentName, Validators.required],
+      price: [data.price, Validators.required],
+      subjectContentImage: [data.subjectContentImage, Validators.required],
+      subSubjectId: [data.subSubjectId, Validators.required],
+      videoURL: [data.video_url, Validators.required],
+      teacherId: [data.teacherId, Validators.required],
+      description: [data.description, Validators.required],
+      subjectId: [data.subjectId, Validators.required]
     });
   }
   get fc(){
@@ -125,8 +147,8 @@ recordtoupdate:any;
        })
     }else if(this.CourseLectureForm.status == "VALID" && this.update == true){
       this.appendform();
-      this.CourseLectureFormData.append('Id', this.recordtoupdate.id);
-      this._CourseContentService.UpdateCourseContent(this.CourseLectureFormData).subscribe((res) => {
+      this.CourseLectureFormData.append('subSubjectsId', this.recordtoupdate.subSubjectsId);
+      this._CourseContentService.UpdateCourseContent(this.CourseLectureFormData, this.recordtoupdate.subSubjectsId).subscribe((res) => {
         Swal.fire({
          icon: "success",
          title: "تم تعديل الكورس بنجاح",

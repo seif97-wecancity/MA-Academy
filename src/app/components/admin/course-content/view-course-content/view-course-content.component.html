@@ -37,18 +37,18 @@
                                 <tbody>
                                     <tr *ngFor="let view of courselectures;let x = index" class=" ">
                                         <td scope="row" class="p-2">{{x+1}}</td>
-                                        <td scope="row" class="p-2">{{view.subjectContentName   }}</td>
+                                        <td scope="row" class="p-2">{{view.subjectContentName}}</td>
                                         <td scope="row" class="p-2">{{view.price}}</td>
                                         <td scope="row" class="p-2"><a [href]="view.video_url">{{view.video_url}}</a></td>
                                         <!-- <td scope="row" class="p-2">{{view.description}}</td> -->
                                         
                                         
                                             <td class="font-style chose">
-                                                <!-- <button class="btn pull-right"
+                                                <button class="btn pull-right"
                                                     style="color: rgba(35, 118, 241, 0.667); padding: 7px"
                                                     (click)="update(view)">
                                                     <i class="fa fa-pencil"></i>
-                                                </button> -->
+                                                </button>
                                                    <button class="btn  pull-right"  style="color: red; padding: 7px"
                                                    (click)="delete(view.id)">
                                                     <i class="fa fa-trash"></i>
