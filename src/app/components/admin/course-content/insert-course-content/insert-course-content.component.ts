@@ -24,6 +24,7 @@ fileLogo:string;
 update:boolean = false;
 button:boolean = false;
 recordtoupdate:any;
+subSubjectid:number;
   constructor(private _CoursesService:CoursesService
              ,private _CourseContentService :CourseContentService 
              ,private _TeachersService:TeachersService
@@ -35,15 +36,20 @@ recordtoupdate:any;
     this.getdropdowns();
     this._CourseContentService.coursecontent.subscribe((res) => {
       if( res == null){
-        this.initiate();
+        this._CourseContentService.insertnewcoursecontent.subscribe((data) => {
+          if( data != null){
+            this.initiate(data);
+          }else{
+            this.initiate();
+          }
+        })
       }else{
         this.recordtoupdate = res;
          this.checkedit(this.recordtoupdate);
          this.update = true;
       }
     })
-    
-    
+
   }
 
 
@@ -51,7 +57,6 @@ recordtoupdate:any;
     this._CoursesService.GetCourse().subscribe((res) => {
       this.courses = res.data;
     });
-    debugger
     this._TeachersService.GetTeacher().subscribe((res) => {
       this.teachers = res.data;
     });
@@ -60,12 +65,12 @@ recordtoupdate:any;
     })
   }
 
-  initiate(){
+  initiate(id?:any){
     this.CourseLectureForm = this._FormBuilder.group({
       subjectContentName: ['', Validators.required],
       price: ['', Validators.required],
       subjectContentImage: ['', Validators.required],
-      subSubjectId: ['', Validators.required],
+      subSubjectId: [id || '', Validators.required],
       videoURL: ['', Validators.required],
       teacherId: ['', Validators.required],
       description: ['', Validators.required],
@@ -147,8 +152,7 @@ recordtoupdate:any;
        })
     }else if(this.CourseLectureForm.status == "VALID" && this.update == true){
       this.appendform();
-      this.CourseLectureFormData.append('subSubjectsId', this.recordtoupdate.subSubjectsId);
-      this._CourseContentService.UpdateCourseContent(this.CourseLectureFormData, this.recordtoupdate.subSubjectsId).subscribe((res) => {
+      this._CourseContentService.UpdateCourseContent(this.CourseLectureFormData, this.recordtoupdate.subSubjectId).subscribe((res) => {
         Swal.fire({
          icon: "success",
          title: "تم تعديل الكورس بنجاح",
@@ -178,4 +182,10 @@ recordtoupdate:any;
     }
    
   }
+
+  ngOnDestroy(){
+    this._CourseContentService.insertnewcoursecontent.next(null);
+     }
+
+  
 }

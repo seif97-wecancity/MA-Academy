@@ -41,6 +41,11 @@
                                         <td scope="row" class="p-2">{{view.subjectName}}</td>
                                             <td class="font-style chose">
                                                 <button class="btn pull-right"
+                                                    style="color: rgba(59, 133, 99, 0.667); padding: 7px"
+                                                    (click)="insertsubcontent(view.subSubjectsId)">
+                                                    <i class="fa fa-plus"></i>
+                                                </button>
+                                                <button class="btn pull-right"
                                                     style="color: rgba(35, 118, 241, 0.667); padding: 7px"
                                                     (click)="update(view)">
                                                     <i class="fa fa-pencil"></i>

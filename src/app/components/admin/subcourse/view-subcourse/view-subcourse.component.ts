@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { SubcourseService } from '../../../../shared/API-Service/services/subcourse.service';
+import { CourseContentService } from '../../../../shared/API-Service/services/course-content.service';
 
 @Component({
   selector: 'app-view-subcourse',
@@ -11,7 +12,8 @@ import { SubcourseService } from '../../../../shared/API-Service/services/subcou
 export class ViewSubcourseComponent implements OnInit {
 subsubjects:any [];
   constructor(private _SubcourseService:SubcourseService
-             ,private _Router:Router) { }
+             ,private _Router:Router
+             ,private _CourseContentService:CourseContentService) { }
 
   ngOnInit(): void {
     this.getsubsubjects();
@@ -60,5 +62,9 @@ subsubjects:any [];
   update(record:object){
     this._SubcourseService.SubSubject.next(record);
     this._Router.navigate(['content/admin/InsertSubSubject']);
+  }
+  insertsubcontent(id){
+    this._CourseContentService.insertnewcoursecontent.next(id);
+    this._Router.navigate(['content/admin/InsertCourseLecture']); 
   }
 }

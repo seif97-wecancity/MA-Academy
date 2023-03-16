@@ -91,7 +91,6 @@
                                 <label for="validationCustom05"><span class="validation-required">*</span> اختر تصنيف المادة</label>
                                 <ng-select #Governorate  [selectOnTab]="true" formControlName="subSubjectId"
                                     class="form-control p-0" placeholder="اختر تصنيف المادة"
-                                    containerClass="" 
                                     id="validationCustom05">
                                     <ng-option *ngFor="let item of subSubjects" [value]="item.subSubjectsId" >{{item.subSubjectsName}}</ng-option>
                                 </ng-select>

@@ -9,6 +9,7 @@ import { environment } from 'src/environments/environment.prod';
 export class CourseContentService {
 
   public coursecontent = new BehaviorSubject(null);
+  public insertnewcoursecontent = new BehaviorSubject(null);
   constructor(private _HttpClient:HttpClient) { }
 
 
@@ -20,7 +21,7 @@ export class CourseContentService {
    return this._HttpClient.post(`${environment.Server_URL}/addSubjectContent`, data);
   }
 
-  UpdateCourseContent(data : object, id : number):Observable<any>{
+  UpdateCourseContent(data : object,id : number):Observable<any>{
    return this._HttpClient.put(`${environment.Server_URL}/updateSubjectContent/${id}?`, data);
   }
 
