@@ -2216,7 +2216,7 @@
         if (rf & 2) {
           var item_r14 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("value", item_r14.id);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("value", item_r14.subjectId);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
 
@@ -2236,7 +2236,7 @@
         if (rf & 2) {
           var item_r15 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("value", item_r15.id);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("value", item_r15.subSubjectsId);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
 
@@ -2256,7 +2256,7 @@
         if (rf & 2) {
           var item_r16 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("value", item_r16.id);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("value", item_r16.teacherId);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
 
@@ -2345,17 +2345,16 @@
 
             this._CoursesService.GetCourse().subscribe(function (res) {
               _this3.courses = res.data;
-              debugger;
             });
+
+            debugger;
 
             this._TeachersService.GetTeacher().subscribe(function (res) {
               _this3.teachers = res.data;
-              debugger;
             });
 
             this._SubcourseService.GetSubCourse().subscribe(function (res) {
               _this3.subSubjects = res.data;
-              debugger;
             });
           }
         }, {
@@ -2509,7 +2508,7 @@
         selectors: [["app-insert-course-content"]],
         decls: 79,
         vars: 31,
-        consts: [[1, "container-fluid"], [1, "row"], [1, "col-md-12"], [1, "card"], [1, "card-header", 2, "padding-bottom", "5px !important"], [1, "pb-2"], [1, "card-body"], ["autocomplete", "off", "novalidate", "", 1, "needs-validation", 3, "formGroup", "ngSubmit"], [1, "form-row"], [1, "col-6", "mb-3"], ["for", "validation01"], [1, "validation-required"], ["id", "validation01", "type", "text", "formControlName", "subjectContentName", "required", "", "placeholder", "\u0627\u0643\u062A\u0628 \u0627\u0633\u0645 \u0645\u062D\u062A\u0648\u0649 \u0627\u0644\u0645\u0627\u062F\u0629", "containerClass", "", 1, "form-control", 3, "tooltip"], ["id", "validation01", "type", "text", "formControlName", "price", "onlyNumbers", "", "required", "", "placeholder", "\u0627\u0643\u062A\u0628 \u0633\u0639\u0631 \u0627\u0644\u0645\u0627\u062F\u0629", "containerClass", "", 1, "form-control", 3, "tooltip"], ["id", "validation01", "type", "text", "formControlName", "videoURL", "required", "", "placeholder", "\u0627\u062F\u062E\u0644 \u0631\u0627\u0628\u0637 \u0627\u0644\u0641\u064A\u062F\u064A\u0648", "containerClass", "", 1, "form-control", 3, "tooltip"], ["id", "validation01", "type", "text", "formControlName", "description", "required", "", "placeholder", "\u0627\u0643\u062A\u0628 \u0648\u0635\u0641 \u0644\u0645\u062D\u062A\u0648\u0649 \u0627\u0644\u0645\u0627\u062F\u0629", "containerClass", "", 1, "form-control", 3, "tooltip"], [1, "col-lg-6", "col-sm-12", "mb-3"], ["for", "validationCustom05"], ["formControlName", "subjectId", "placeholder", "\u0627\u062E\u062A\u0631 \u0645\u0627\u062F\u0629", "containerClass", "", "id", "validationCustom05", 1, "form-control", "p-0", 3, "selectOnTab"], ["Governorate", ""], [3, "value", 4, "ngFor", "ngForOf"], ["formControlName", "subSubjectId", "placeholder", "\u0627\u062E\u062A\u0631 \u062A\u0635\u0646\u064A\u0641 \u0627\u0644\u0645\u0627\u062F\u0629", "containerClass", "", "id", "validationCustom05", 1, "form-control", "p-0", 3, "selectOnTab"], ["formControlName", "teacherId", "placeholder", "\u0627\u062E\u062A\u0631 \u0627\u0644\u0645\u062F\u0631\u0633", "containerClass", "", "id", "validationCustom05", 1, "form-control", "p-0", 3, "selectOnTab"], [1, "col-6", "my-4", 2, "padding", "1%"], ["style", "width: 60%; height: 220px;", "class", "image-style p-2", 3, "src", 4, "ngIf"], ["type", "file", "formControlName", "subjectContentImage", "accept", "image/*", "id", "getLogo", 2, "display", "none", 3, "change"], ["file", ""], ["type", "button", "onclick", "document.getElementById('getLogo').click()", 1, "btn", "d-block", 2, "width", "60%"], ["type", "file", "accept", "pdf/*", "id", "getFile", 2, "display", "none", 3, "change"], ["type", "button", "onclick", "document.getElementById('getFile').click()", 1, "btn", "d-block", 2, "width", "60%"], ["elseBlock", ""], [4, "ngIf", "ngIfElse"], [3, "value"], [1, "image-style", "p-2", 2, "width", "60%", "height", "220px", 3, "src"], ["type", "submit", 1, "btn", "pull-right", 3, "disabled"], ["type", "submit", 1, "btn", "pull-right"]],
+        consts: [[1, "container-fluid"], [1, "row"], [1, "col-md-12"], [1, "card"], [1, "card-header", 2, "padding-bottom", "5px !important"], [1, "pb-2"], [1, "card-body"], ["autocomplete", "off", "novalidate", "", 1, "needs-validation", 3, "formGroup", "ngSubmit"], [1, "form-row"], [1, "col-6", "mb-3"], ["for", "validation01"], [1, "validation-required"], ["id", "validation01", "type", "text", "formControlName", "subjectContentName", "required", "", "placeholder", "\u0627\u0643\u062A\u0628 \u0627\u0633\u0645 \u0645\u062D\u062A\u0648\u0649 \u0627\u0644\u0645\u0627\u062F\u0629", "containerClass", "", 1, "form-control", 3, "tooltip"], ["id", "validation01", "type", "text", "formControlName", "price", "onlyNumbers", "", "required", "", "placeholder", "\u0627\u0643\u062A\u0628 \u0633\u0639\u0631 \u0627\u0644\u0645\u0627\u062F\u0629", "containerClass", "", 1, "form-control", 3, "tooltip"], ["id", "validation01", "type", "text", "formControlName", "videoURL", "required", "", "placeholder", "\u0627\u062F\u062E\u0644 \u0631\u0627\u0628\u0637 \u0627\u0644\u0641\u064A\u062F\u064A\u0648", "containerClass", "", 1, "form-control", 3, "tooltip"], ["id", "validation01", "type", "text", "formControlName", "description", "required", "", "placeholder", "\u0627\u0643\u062A\u0628 \u0648\u0635\u0641 \u0644\u0645\u062D\u062A\u0648\u0649 \u0627\u0644\u0645\u0627\u062F\u0629", "containerClass", "", 1, "form-control", 3, "tooltip"], [1, "col-lg-6", "col-sm-12", "mb-3"], ["for", "validationCustom05"], ["formControlName", "subjectId", "placeholder", "\u0627\u062E\u062A\u0631 \u0645\u0627\u062F\u0629", "containerClass", "", "id", "validationCustom05", 1, "form-control", "p-0", 3, "selectOnTab"], ["Governorate", ""], [3, "value", 4, "ngFor", "ngForOf"], ["formControlName", "subSubjectId", "placeholder", "\u0627\u062E\u062A\u0631 \u062A\u0635\u0646\u064A\u0641 \u0627\u0644\u0645\u0627\u062F\u0629", "containerClass", "", "id", "validationCustom05", 1, "form-control", "p-0", 3, "selectOnTab"], ["formControlName", "teacherId", "placeholder", "\u0627\u062E\u062A\u0631 \u0627\u0644\u0645\u062F\u0631\u0633", "containerClass", "", "id", "validationCustom05", 1, "form-control", "p-0", 3, "selectOnTab"], [1, "col-6", "my-4", 2, "padding", "1%"], ["style", "width: 60%; height: 220px;", "class", "image-style p-2", 3, "src", 4, "ngIf"], ["type", "file", "formControlName", "subjectContentImage", "accept", "image/*", "id", "getLogo", 2, "display", "none", 3, "change"], ["file", ""], ["type", "button", "onclick", "document.getElementById('getLogo').click()", 1, "btn", "d-block", 2, "width", "60%"], ["type", "file", "formControlName", "file", "accept", "pdf/*", "id", "getFile", 2, "display", "none", 3, "change"], ["type", "button", "onclick", "document.getElementById('getFile').click()", 1, "btn", "d-block", 2, "width", "60%"], ["elseBlock", ""], [4, "ngIf", "ngIfElse"], [3, "value"], [1, "image-style", "p-2", 2, "width", "60%", "height", "220px", 3, "src"], ["type", "submit", 1, "btn", "pull-right", 3, "disabled"], ["type", "submit", 1, "btn", "pull-right"]],
         template: function InsertCourseContentComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 0);
@@ -2990,7 +2989,6 @@
 
             this._CourseContentService.GetCourseContent().subscribe(function (res) {
               _this7.courselectures = res.data;
-              debugger;
             });
           } // showimage(data){
           //   Swal.fire({
@@ -3026,18 +3024,19 @@
 
                   _this8.getcoursecontent();
                 }, function (err) {
-                  // Swal.fire({
-                  //   icon: 'error',
-                  //   title: 'خطأ',
-                  //   text:err.error.message    
-                  // })
-                  // this.getcoursecontent();
                   sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                    icon: "success",
-                    title: "تم المسح بنجاح",
-                    showConfirmButton: false,
-                    timer: 1500
+                    icon: 'error',
+                    title: 'خطأ',
+                    text: err.error.message
                   });
+
+                  _this8.getcoursecontent(); // Swal.fire({
+                  //   icon: "success",
+                  //   title: "تم المسح بنجاح",
+                  //   showConfirmButton: false,
+                  //   timer: 1500,
+                  // });
+
 
                   _this8.getcoursecontent();
                 }, function () {
@@ -3292,7 +3291,7 @@
         if (rf & 2) {
           var item_r5 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("value", item_r5.id);
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("value", item_r5.educationId);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
 
@@ -3735,7 +3734,7 @@
 
             var ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
 
-            return ctx_r5["delete"](view_r1.id);
+            return ctx_r5["delete"](view_r1.subjectId);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](9, "i", 24);
@@ -3816,20 +3815,20 @@
 
                   _this14.getcourses();
                 }, function (err) {
-                  // Swal.fire({
-                  //   icon: 'error',
-                  //   title: 'خطأ',
-                  //   text:err.error.message    
-                  // })
-                  // this.getcourses();
                   sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                    icon: "success",
-                    title: "تم المسح بنجاح",
-                    showConfirmButton: false,
-                    timer: 1500
+                    icon: 'error',
+                    title: 'خطأ',
+                    text: err.error.message
                   });
 
-                  _this14.getcourses();
+                  _this14.getcourses(); //     Swal.fire({
+                  //       icon: "success",
+                  //       title: "تم المسح بنجاح",
+                  //       showConfirmButton: false,
+                  //       timer: 1500,
+                  //     });
+                  //  this.getcourses();
+
                 }, function () {
                   console.log("completed");
                 });
@@ -4154,7 +4153,7 @@
             var _this16 = this;
 
             this._CoursesService.GetCourse().subscribe(function (res) {
-              _this16.subjects = res;
+              _this16.subjects = res.data;
             });
           }
         }, {
@@ -4509,7 +4508,7 @@
 
             var ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
 
-            return ctx_r5["delete"](view_r1.id);
+            return ctx_r5["delete"](view_r1.educationId);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](11, "i", 24);
@@ -4587,17 +4586,10 @@
 
                   _this19.getedicationlevels();
                 }, function (err) {
-                  // Swal.fire({
-                  //   icon: 'error',
-                  //   title: 'خطأ',
-                  //   text:err.error.message    
-                  // })
-                  // this.getedicationlevels();
                   sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                    icon: "success",
-                    title: "تم المسح بنجاح",
-                    showConfirmButton: false,
-                    timer: 1500
+                    icon: 'error',
+                    title: 'خطأ',
+                    text: err.error.message
                   });
 
                   _this19.getedicationlevels();
@@ -5285,7 +5277,7 @@
         if (rf & 2) {
           var item_r8 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("value", item_r8.id);
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("value", item_r8.educationId);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
 
@@ -5378,7 +5370,7 @@
           key: "checkupdate",
           value: function checkupdate(data) {
             this.StudentForm = this._FormBuilder.group({
-              studentName: [data.name, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
+              studentName: [data.studentName, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
               educationId: [data.educationId, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
               studentImage: [data.studentImage, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required]
             });
@@ -5798,7 +5790,7 @@
 
             var ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
 
-            return ctx_r6["delete"](view_r1.id);
+            return ctx_r6["delete"](view_r1.studentId);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](14, "i", 26);
@@ -6153,7 +6145,7 @@
         if (rf & 2) {
           var item_r5 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("value", item_r5.id);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("value", item_r5.subjectId);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
 
@@ -6331,7 +6323,7 @@
         selectors: [["app-insert-subcourse"]],
         decls: 37,
         vars: 15,
-        consts: [[1, "container-fluid"], [1, "row"], [1, "col-md-12"], [1, "card"], [1, "card-header", 2, "padding-bottom", "5px !important"], [1, "pb-2"], [1, "card-body"], ["autocomplete", "off", "novalidate", "", 1, "needs-validation", 3, "formGroup", "ngSubmit"], [1, "form-row"], [1, "col-6", "mb-3"], ["for", "validation01"], [1, "validation-required"], ["id", "validation01", "type", "text", "formControlName", "subSubjectsName", "required", "", "placeholder", "\u0627\u0633\u0645 \u062A\u0635\u0646\u064A\u0641 \u0627\u0644\u0645\u0627\u062F\u0647 ", "containerClass", "", 1, "form-control", 3, "tooltip"], ["id", "validation01", "type", "text", "formControlName", "lessonsNumb", "onlyNumbers", "", "required", "", "placeholder", "\u0627\u062F\u062E\u0644 \u0639\u062F\u062F \u0627\u0644\u062D\u0635\u0635", "containerClass", "", 1, "form-control", 3, "tooltip"], [1, "col-lg-6", "col-sm-12", "mb-3"], ["for", "validationCustom05"], ["formControlName", "subjectId", "placeholder", "\u0627\u062E\u062A\u0631 \u0627\u0644\u0645\u0627\u062F\u0629 ", "containerClass", "", "id", "validationCustom05", 1, "form-control", "p-0", 3, "selectOnTab"], [3, "value", 4, "ngFor", "ngForOf"], ["elseBlock", ""], [4, "ngIf", "ngIfElse"], [3, "value"], ["type", "submit", 1, "btn", "pull-right", 3, "disabled"], ["type", "submit", 1, "btn", "pull-right"]],
+        consts: [[1, "container-fluid"], [1, "row"], [1, "col-md-12"], [1, "card"], [1, "card-header", 2, "padding-bottom", "5px !important"], [1, "pb-2"], [1, "card-body"], ["autocomplete", "off", "novalidate", "", 1, "needs-validation", 3, "formGroup", "ngSubmit"], [1, "form-row"], [1, "col-6", "mb-3"], ["for", "validation01"], [1, "validation-required"], ["id", "validation01", "type", "text", "formControlName", "subSubjectsName", "required", "", "placeholder", "\u0627\u0633\u0645 \u062A\u0635\u0646\u064A\u0641 \u0627\u0644\u0645\u0627\u062F\u0647 ", "containerClass", "", 1, "form-control", 3, "tooltip"], ["id", "validation01", "type", "number", "formControlName", "lessonsNumb", "onlyNumbers", "", "required", "", "placeholder", "\u0627\u062F\u062E\u0644 \u0639\u062F\u062F \u0627\u0644\u062D\u0635\u0635", "containerClass", "", 1, "form-control", 3, "tooltip"], [1, "col-lg-6", "col-sm-12", "mb-3"], ["for", "validationCustom05"], ["formControlName", "subjectId", "placeholder", "\u0627\u062E\u062A\u0631 \u0627\u0644\u0645\u0627\u062F\u0629 ", "containerClass", "", "id", "validationCustom05", 1, "form-control", "p-0", 3, "selectOnTab"], [3, "value", 4, "ngFor", "ngForOf"], ["elseBlock", ""], [4, "ngIf", "ngIfElse"], [3, "value"], ["type", "submit", 1, "btn", "pull-right", 3, "disabled"], ["type", "submit", 1, "btn", "pull-right"]],
         template: function InsertSubcourseComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 0);
@@ -6485,7 +6477,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", ctx.update)("ngIfElse", _r2);
           }
         },
-        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControlName, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.RequiredValidator, ngx_bootstrap_tooltip__WEBPACK_IMPORTED_MODULE_7__.TooltipDirective, _shared_directives_only_numbers_directive__WEBPACK_IMPORTED_MODULE_3__.OnlyNumbersDirective, _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_8__.NgSelectComponent, _angular_common__WEBPACK_IMPORTED_MODULE_9__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_9__.NgIf, _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_8__["ɵr"]],
+        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControlName, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.RequiredValidator, ngx_bootstrap_tooltip__WEBPACK_IMPORTED_MODULE_7__.TooltipDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NumberValueAccessor, _shared_directives_only_numbers_directive__WEBPACK_IMPORTED_MODULE_3__.OnlyNumbersDirective, _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_8__.NgSelectComponent, _angular_common__WEBPACK_IMPORTED_MODULE_9__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_9__.NgIf, _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_8__["ɵr"]],
         styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJpbnNlcnQtc3ViY291cnNlLmNvbXBvbmVudC5jc3MifQ== */"]
       });
       /***/
@@ -6608,7 +6600,7 @@
 
             var ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
 
-            return ctx_r5["delete"](view_r1.id);
+            return ctx_r5["delete"](view_r1.subSubjectsId);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](13, "i", 24);
@@ -6690,17 +6682,10 @@
 
                   _this32.getsubsubjects();
                 }, function (err) {
-                  // Swal.fire({
-                  //   icon: 'error',
-                  //   title: 'خطأ',
-                  //   text:err.error.message    
-                  // })
-                  // this.getsubsubjects();
                   sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                    icon: "success",
-                    title: "تم المسح بنجاح",
-                    showConfirmButton: false,
-                    timer: 1500
+                    icon: 'error',
+                    title: 'خطأ',
+                    text: err.error.message
                   });
 
                   _this32.getsubsubjects();
@@ -6957,7 +6942,7 @@
         if (rf & 2) {
           var item_r6 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("value", item_r6.id);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("value", item_r6.educationId);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
 
@@ -6977,7 +6962,7 @@
         if (rf & 2) {
           var item_r7 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("value", item_r7.id);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("value", item_r7.subjectId);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
 
@@ -7079,7 +7064,7 @@
           key: "checkupdate",
           value: function checkupdate(data) {
             this.TeacherForm = this._FormBuilder.group({
-              teacherName: [data.name, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.Validators.required],
+              teacherName: [data.teacherName, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.Validators.required],
               educationId: [data.educationId, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.Validators.required],
               subjectId: [data.subjectId, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.Validators.required]
             });
@@ -7139,6 +7124,7 @@
               });
             } else if (this.TeacherForm.status == "VALID" && this.update == true) {
               this._TeachersService.UpdateTeacher(this.TeacherForm.value, this.recordtoupdate.id).subscribe(function (res) {
+                debugger;
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
                   icon: "success",
                   title: "تم تعديل الكورس بنجاح",
@@ -7470,7 +7456,7 @@
 
             var ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
 
-            return ctx_r5["delete"](view_r1.id);
+            return ctx_r5["delete"](view_r1.teacherId);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](13, "i", 24);
@@ -7553,20 +7539,20 @@
 
                   _this38.getteachers();
                 }, function (err) {
-                  // Swal.fire({
-                  //   icon: 'error',
-                  //   title: 'خطأ',
-                  //   text:err.error.message    
-                  // })
-                  // this.getteachers();
                   sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                    icon: "success",
-                    title: "تم المسح بنجاح",
-                    showConfirmButton: false,
-                    timer: 1500
+                    icon: 'error',
+                    title: 'خطأ',
+                    text: err.error.message
                   });
 
-                  _this38.getteachers();
+                  _this38.getteachers(); //     Swal.fire({
+                  //       icon: "success",
+                  //       title: "تم المسح بنجاح",
+                  //       showConfirmButton: false,
+                  //       timer: 1500,
+                  //     });
+                  //  this.getteachers();
+
                 }, function () {
                   console.log("completed");
                 });
