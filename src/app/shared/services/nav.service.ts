@@ -164,6 +164,19 @@ export class NavService implements OnDestroy {
       ],
     },
     {
+      title: "تصنيفات محتوى المواد",
+      icon: "book-open",
+      type: "sub",
+      badgeType: "success",
+      children: [
+        {
+          path: "admin/ViewSubCourseContent",
+          title: "ادارة تصنيفات محتوى المواد",
+          type: "link",
+        },
+      ],
+    },
+    {
       title: "محتوى المواد",
       icon: "book-open",
       type: "sub",

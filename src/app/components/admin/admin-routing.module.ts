@@ -13,6 +13,8 @@ import { ViewEducationlevelComponent } from "./education_level/view-educationlev
 import { ViewProductComponent } from './product/view-product/view-product.component';
 import { InsertStudentsComponent } from "./students/insert-students/insert-students.component";
 import { ViewStudentsComponent } from "./students/view-students/view-students.component";
+import { InsertSubcoursecontentComponent } from "./subcourse-content/insert-subcoursecontent/insert-subcoursecontent.component";
+import { ViewSubcoursecontentComponent } from "./subcourse-content/view-subcoursecontent/view-subcoursecontent.component";
 import { InsertSubcourseComponent } from "./subcourse/insert-subcourse/insert-subcourse.component";
 import { ViewSubcourseComponent } from "./subcourse/view-subcourse/view-subcourse.component";
 import { InsertTeachersComponent } from "./teachers/insert-teachers/insert-teachers.component";
@@ -88,6 +90,14 @@ const routes: Routes = [
             {
                 path: "InsertCourseLecture",
                 component: InsertCourseContentComponent,
+            },
+            {
+                path: "ViewSubCourseContent",
+                component: ViewSubcoursecontentComponent,
+            },
+            {
+                path: "InsertSubCourseContent",
+                component: InsertSubcoursecontentComponent,
             },
             {
                 path: "ChangePassword",
