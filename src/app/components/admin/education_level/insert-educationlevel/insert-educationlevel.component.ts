@@ -88,7 +88,7 @@ onSubmit(){
            this.button = false;
      })
   }else if(this.educationlevelForm.status == "VALID" && this.update == true){
-    this._EducationLevelService.UpdateEducationLevel(this.educationlevelForm.value, this.recordtoupdate.id).subscribe((res) => {
+    this._EducationLevelService.UpdateEducationLevel(this.educationlevelForm.value, this.recordtoupdate.educationId).subscribe((res) => {
       Swal.fire({
        icon: "success",
        title: "تم تعديل المرحلة الدراسية بنجاح",

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { StudentsService } from '../../../../shared/API-Service/services/students.service';
-
+import { Image } from './../../../../../images/images';
 @Component({
   selector: 'app-view-students',
   templateUrl: './view-students.component.html',
@@ -10,7 +10,7 @@ import { StudentsService } from '../../../../shared/API-Service/services/student
 })
 export class ViewStudentsComponent implements OnInit {
 students:any [];
-img:string = 'https://www.maapp.misrpedia.com/storage/app/';
+img:string = Image;
   constructor(private _StudentsService:StudentsService, private _Router:Router) { }
 
   ngOnInit(): void {
@@ -20,7 +20,6 @@ img:string = 'https://www.maapp.misrpedia.com/storage/app/';
 getstudents(){
   this._StudentsService.GetStudent().subscribe((res) => {
     this.students = res.data; 
-    debugger
   })
 }
 

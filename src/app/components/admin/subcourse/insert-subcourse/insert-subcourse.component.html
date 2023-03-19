@@ -21,27 +21,14 @@
                             <!-- SubSubject Name  -->
                             <div class="col-6 mb-3">
                                 <label for="validation01"><span class="validation-required">*</span> اسم تصنيف المادة</label>
-                                <input class="form-control" id="validation01" type="text" formControlName="subSubjectsName"
-                                [tooltip]="fc.subSubjectsName.errors?.required ? 'الحقل مطلوب' : null"
-                                [class.is-valid]="fc.subSubjectsName.valid && (fc.subSubjectsName.touched)"
-                                [class.is-invalid]="fc.subSubjectsName.invalid && (fc.subSubjectsName.touched)"
+                                <input class="form-control" id="validation01" type="text" formControlName="subSubjectName"
+                                [tooltip]="fc.subSubjectName.errors?.required ? 'الحقل مطلوب' : null"
+                                [class.is-valid]="fc.subSubjectName.valid && (fc.subSubjectName.touched)"
+                                [class.is-invalid]="fc.subSubjectName.invalid && (fc.subSubjectName.touched)"
                                      required
                                      placeholder="اسم تصنيف الماده "
                                     containerClass="" />
                             </div>
-                            <!-- number of lessons -->
-                            <div class="col-6 mb-3">
-                                <label for="validation01"><span class="validation-required">*</span> عدد الحصص</label>
-                                <input class="form-control" id="validation01" type="number" formControlName="lessonsNumb"
-                                [tooltip]="fc.lessonsNumb.errors?.required ? 'الحقل مطلوب' : null"
-                                [class.is-valid]="fc.lessonsNumb.valid && (fc.lessonsNumb.touched)"
-                                [class.is-invalid]="fc.lessonsNumb.invalid && (fc.lessonsNumb.touched)"
-                                onlyNumbers
-                                     required
-                                     placeholder="ادخل عدد الحصص"
-                                    containerClass="" />
-                            </div>
-                          
                                 <!-- Courses  -->
                               <div class="col-lg-6 col-sm-12  mb-3">
                                 <label for="validationCustom05"><span class="validation-required">*</span> المادة</label>

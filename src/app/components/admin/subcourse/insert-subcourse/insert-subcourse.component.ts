@@ -35,8 +35,7 @@ courses:any [];
   }
   initiate(){
     this.SubSubjectForm = this._FormBuilder.group({
-      subSubjectsName: ['', Validators.required],
-      lessonsNumb: ['', Validators.required],
+      subSubjectName: ['', Validators.required],
       subjectId: ['', Validators.required],
     });
   }
@@ -46,8 +45,7 @@ courses:any [];
   
   checkupdate(data?:any){
     this.SubSubjectForm = this._FormBuilder.group({
-      subSubjectsName: [data.subSubjectsName, Validators.required],
-      lessonsNumb: [data.lessonsNumb, Validators.required],
+      subSubjectName: [data.subSubjectName, Validators.required],
       subjectId: [data.subjectId, Validators.required]
     });
   }
@@ -80,7 +78,7 @@ getdropdown(){
              this.button = false;
        })
     }else if(this.SubSubjectForm.status == "VALID" && this.update == true){
-      this._SubcourseService.UpdateSubCourse(this.SubSubjectForm.value , this.recordtoupdate.id).subscribe((res) => {
+      this._SubcourseService.UpdateSubCourse(this.SubSubjectForm.value , this.recordtoupdate.subSubjectId).subscribe((res) => {
         Swal.fire({
          icon: "success",
          title: "تم تعديل تصنيف المادة بنجاح",

@@ -63,8 +63,10 @@ subsubjects:any [];
     this._SubcourseService.SubSubject.next(record);
     this._Router.navigate(['content/admin/InsertSubSubject']);
   }
+
   insertsubcontent(id){
-    this._CourseContentService.insertnewcoursecontent.next(id);
-    this._Router.navigate(['content/admin/InsertCourseLecture']); 
+    this._SubcourseService.SubSubject.next(id);
+    this._Router.navigate(['content/admin/InsertSubCourseContent']); 
   }
+
 }

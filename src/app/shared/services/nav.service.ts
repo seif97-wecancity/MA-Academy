@@ -112,6 +112,19 @@ export class NavService implements OnDestroy {
       ],
     },
     {
+      title: "المواد",
+      icon: "book-open",
+      type: "sub",
+      badgeType: "success",
+      children: [
+        {
+          path: "admin/ViewCourses",
+          title: "ادارة المواد",
+          type: "link",
+        },
+      ],
+    },
+    {
       title: "المدرسين",
       icon: "user",
       type: "sub",
@@ -133,19 +146,6 @@ export class NavService implements OnDestroy {
         {
           path: "admin/ViewStudents",
           title: "ادارة الطلاب",
-          type: "link",
-        },
-      ],
-    },
-    {
-      title: "المواد",
-      icon: "book-open",
-      type: "sub",
-      badgeType: "success",
-      children: [
-        {
-          path: "admin/ViewCourses",
-          title: "ادارة المواد",
           type: "link",
         },
       ],

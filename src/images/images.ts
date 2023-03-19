@@ -8,7 +8,7 @@ export const img = {
   // Server_URL:'https://localhost:7296/api',
  
 };
-export const Image="https://alandalusbimexdevapi.wecancity.com/"
+export const Image="https://www.maapp.misrpedia.com/storage/app/"
 
 /*
  * For easier debugging in development mode, you can import the following file

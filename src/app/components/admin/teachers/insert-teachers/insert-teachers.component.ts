@@ -112,8 +112,7 @@ data:any [];
              this.button = false;
        })
     }else if(this.TeacherForm.status == "VALID" && this.update == true){
-      this._TeachersService.UpdateTeacher(this.TeacherForm.value, this.recordtoupdate.id).subscribe((res) => {
-        debugger
+      this._TeachersService.UpdateTeacher(this.TeacherForm.value, this.recordtoupdate.teacherId).subscribe((res) => {
         Swal.fire({
          icon: "success",
          title: "تم تعديل الكورس بنجاح",

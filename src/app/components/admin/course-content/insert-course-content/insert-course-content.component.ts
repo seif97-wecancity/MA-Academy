@@ -37,10 +37,10 @@ subSubjectid:number;
     this._CourseContentService.coursecontent.subscribe((res) => {
       if( res == null){
         this._CourseContentService.insertnewcoursecontent.subscribe((data) => {
-          if( data != null){
-            this.initiate(data);
-          }else{
+          if( data == null){
             this.initiate();
+          }else{
+            this.initiate(data);
           }
         })
       }else{
@@ -62,15 +62,16 @@ subSubjectid:number;
     });
     this._SubcourseService.GetSubCourse().subscribe((res) =>{
       this.subSubjects = res.data;
-    })
+    });
+    
   }
 
-  initiate(id?:any){
+  initiate(data?:any){
     this.CourseLectureForm = this._FormBuilder.group({
-      subjectContentName: ['', Validators.required],
+      subjectContentName: [data.beforeSubjectContentId || '', Validators.required],
       price: ['', Validators.required],
-      subjectContentImage: ['', Validators.required],
-      subSubjectId: [id || '', Validators.required],
+      subSubjectId: [data.subSubjectId || '', Validators.required],
+      beforSubjectContentId: [data.beforSubjectContentId || '', Validators.required],
       videoURL: ['', Validators.required],
       teacherId: ['', Validators.required],
       description: ['', Validators.required],
@@ -91,31 +92,7 @@ subSubjectid:number;
   }
   get fc(){
     return this.CourseLectureForm.controls;
-  }
-  appendform(){
-    this.CourseLectureFormData = new FormData();
-    this.CourseLectureFormData.append("subjectContentName", this.CourseLectureForm.value.subjectContentName);
-    this.CourseLectureFormData.append("description", this.CourseLectureForm.value.description);
-    this.CourseLectureFormData.append("subjectId", this.CourseLectureForm.value.subjectId);
-    this.CourseLectureFormData.append("subSubjectId", this.CourseLectureForm.value.subSubjectId);
-    this.CourseLectureFormData.append("teacherId", this.CourseLectureForm.value.teacherId);
-    this.CourseLectureFormData.append("video_url", this.CourseLectureForm.value.videoURL);
-    this.CourseLectureFormData.append("price", this.CourseLectureForm.value.price);
-    this.CourseLectureFormData.append("subjectContentImage", this.Image);
-    this.CourseLectureFormData.append("file", this.File);
-  }
-  // imgFile
-  getLogoUrl(event: any) {
-    const reader = new FileReader();
-    if (event.target.files && event.target.files.length) {
-      const [file] = event.target.files;
-      this.Image = event.target.files[0];
-      reader.readAsDataURL(file);
-      reader.onload = () => {
-        this.imageLogo = reader.result as string;
-      };
-    }
-  }
+  } 
   // File
   getFileUrl(event: any) {
     const reader = new FileReader();
@@ -131,8 +108,7 @@ subSubjectid:number;
   onSubmit(){
     this.button = true;
     if( this.CourseLectureForm.status == "VALID" && this.update == false){
-      this.appendform();
-      this._CourseContentService.CreateCourseContent(this.CourseLectureFormData).subscribe((res) => {
+      this._CourseContentService.CreateCourseContent(this.CourseLectureForm.value).subscribe((res) => {
         Swal.fire({
          icon: "success",
          title: "تم تسجيل محتوى المادة بنجاح",
@@ -151,8 +127,8 @@ subSubjectid:number;
              this.button = false;
        })
     }else if(this.CourseLectureForm.status == "VALID" && this.update == true){
-      this.appendform();
-      this._CourseContentService.UpdateCourseContent(this.CourseLectureFormData, this.recordtoupdate.subSubjectId).subscribe((res) => {
+      // this.appendform();
+      this._CourseContentService.UpdateCourseContent(this.CourseLectureForm.value, this.recordtoupdate.subSubjectId).subscribe((res) => {
         Swal.fire({
          icon: "success",
          title: "تم تعديل الكورس بنجاح",
@@ -184,6 +160,7 @@ subSubjectid:number;
   }
 
   ngOnDestroy(){
+    this._CourseContentService.coursecontent.next(null);
     this._CourseContentService.insertnewcoursecontent.next(null);
      }
 

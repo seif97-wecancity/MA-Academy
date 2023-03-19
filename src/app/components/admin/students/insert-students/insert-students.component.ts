@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { StudentsService } from './../../../../shared/API-Service/services/students.service';
 import { EducationLevelService } from './../../../../shared/API-Service/services/education-level.service';
+import { Image } from './../../../../../images/images';
 @Component({
   selector: 'app-insert-students',
   templateUrl: './insert-students.component.html',
@@ -18,6 +19,7 @@ recordtoupdate:any;
 update:boolean = false;
 button:boolean = false;
 educationlevels:any;
+ImageURL:string = Image;
   constructor(private _FormBuilder:FormBuilder
              ,private _StudentsService:StudentsService
              ,private _Router:Router
@@ -31,6 +33,7 @@ educationlevels:any;
       }else{
         this.update = true;
         this.recordtoupdate = res;
+        this.imageLogo = this.ImageURL + this.recordtoupdate.StudentImage;
         this.checkupdate(this.recordtoupdate);
       }
     })
@@ -104,7 +107,7 @@ educationlevels:any;
        })
     }else if(this.StudentForm.status == "VALID" && this.update == true){
       this.appendeddata()
-      this._StudentsService.UpdateStudent(this.StudentFormdata, this.recordtoupdate.id).subscribe((res) => {
+      this._StudentsService.UpdateStudent(this.StudentFormdata, this.recordtoupdate.studentId).subscribe((res) => {
         Swal.fire({
          icon: "success",
          title: "تم تعديل الكورس بنجاح",

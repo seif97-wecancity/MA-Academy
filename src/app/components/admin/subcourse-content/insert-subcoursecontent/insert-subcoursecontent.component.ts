@@ -2,10 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
-import { EducationLevelService } from './../../../../shared/API-Service/services/education-level.service';
-import { CoursesService } from './../../../../shared/API-Service/services/courses.service';
-import { IDropdownSettings, } from 'ng-multiselect-dropdown';
-
+import { SubcoursecontentService } from './../../../../shared/API-Service/services/subcoursecontent.service';
+import { SubcourseService } from './../../../../shared/API-Service/services/subcourse.service';
 @Component({
   selector: 'app-insert-subcoursecontent',
   templateUrl: './insert-subcoursecontent.component.html',
@@ -18,18 +16,46 @@ export class InsertSubcoursecontentComponent implements OnInit {
   recordtoupdate:any;
   subjects:any;
   dropdownSettings:any = {};
-  
+  subsubjects:any [];
   constructor(private _Router:Router
-             ,private _FormBuilder:FormBuilder) { }
+             ,private _FormBuilder:FormBuilder
+             ,private _SubcoursecontentService:SubcoursecontentService
+             ,private _SubcourseService:SubcourseService) { }
 
   ngOnInit(): void {
-    this.initiate();
+    this._SubcourseService.SubSubject.subscribe((res) => {
+      this.getdropdowns();
+      if( res == null){
+        this._SubcoursecontentService.SubjectContent.subscribe((updatedata) => {
+          if( updatedata == null){
+           this.initiate();
+          }else{
+            this.recordtoupdate = updatedata;
+           this.checkedit(this.recordtoupdate);
+           this.update = true;
+          }
+        })
+      }else{
+        this.initiate(res);
+      }
+    })
   }
 
-  initiate(){
+  initiate(id?:number){
     this.subcoursecontentForm = this._FormBuilder.group({
-      nameEn: ['', Validators.required],
-      nameAr: ['', Validators.required]
+      beforSubjectContentName: ['', Validators.required],
+      subSubjectId: [id || '', Validators.required]
+    });
+  }
+  checkedit(data:any){
+    this.subcoursecontentForm = this._FormBuilder.group({
+      beforSubjectContentName: [data.beforSubjectContentName, Validators.required],
+      subSubjectId: [data.subSubjectId, Validators.required]
+    });
+  }
+  getdropdowns(){
+    this._SubcourseService.GetSubCourse().subscribe((res) => {
+      this.subsubjects = res.data;
     });
   }
   get fc(){
@@ -37,8 +63,56 @@ export class InsertSubcoursecontentComponent implements OnInit {
   }
 
 
-
   onSubmit(){
-
+    this.button = true;
+    if( this.subcoursecontentForm.status == "VALID" && this.update == false){
+      this._SubcoursecontentService.CreateSubjectContent(this.subcoursecontentForm.value).subscribe((res) => {
+        Swal.fire({
+         icon: "success",
+         title: "تم تسجيل تصنيف المحتوى بنجاح",
+         showConfirmButton: false,
+         timer: 1500,
+       }); 
+       this.subcoursecontentForm.reset();
+       this._Router.navigate(['content/admin/ViewSubCourseContent']);
+       },(err) => {
+        this.button = false;
+             Swal.fire({
+               icon: 'error',
+               title: 'خطأ',
+               text: 'تأكد من ملئ جميع الخانات',
+             });
+             this.button = false;
+       })
+    }else if(this.subcoursecontentForm.status == "VALID" && this.update == true){
+      this._SubcoursecontentService.UpdateSubjectContent(this.subcoursecontentForm.value, this.recordtoupdate.beforSubjectContentId).subscribe((res) => {
+        Swal.fire({
+         icon: "success",
+         title: "تم تعديل تصنيف المحتوى بنجاح",
+         showConfirmButton: false,
+         timer: 1500,
+       }); 
+       this.subcoursecontentForm.reset();
+       this._Router.navigate(['content/admin/ViewSubCourseContent']);
+       },(err) => {
+        this.button = false;
+             Swal.fire({
+               icon: 'error',
+               title: 'خطأ',
+               text: 'تأكد من ملئ جميع الخانات',
+             });
+             this.button = false;
+       })
+    }
+    else{
+      this.button = false;
+             Swal.fire({
+               icon: 'error',
+               title: 'خطأ',
+               text: 'تأكد من ملئ جميع الخانات',
+             });
+             this.button = false;
+    }
+   
   }
 }

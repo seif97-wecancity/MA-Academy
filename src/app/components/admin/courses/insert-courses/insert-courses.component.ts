@@ -100,7 +100,7 @@ educationlevels:any [];
              this.button = false;
        })
     }else if(this.CourseForm.status == "VALID" && this.update == true){
-      this._CoursesService.UpdateCourse(this.CourseForm.value , this.recordtoupdate.id).subscribe((res) => {
+      this._CoursesService.UpdateCourse(this.CourseForm.value , this.recordtoupdate.subjectId).subscribe((res) => {
         Swal.fire({
          icon: "success",
          title: "تم تعديل الكورس بنجاح",
