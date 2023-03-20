@@ -38,19 +38,34 @@ subSubjectid:number;
 
   ngOnInit(): void {
     this.getdropdowns();
-    this._CourseContentService.coursecontent.subscribe((res) => {
-      if( res == null){
-        this._CourseContentService.insertnewcoursecontent.subscribe((data) => {
-          if( data == null){
-            this.initiate();
-          }else{
-            this.initiate(data);
-          }
-        })
-      }
-      else{
-        this.recordtoupdate = res;
-         this.checkedit(this.recordtoupdate);
+    // this._CourseContentService.coursecontent.subscribe((res) => {
+    //   if( res == null){
+    //     this._CourseContentService.insertnewcoursecontent.subscribe((data) => {
+    //       if( data == null){
+    //         this.initiate();
+    //       }else{
+    //         this.initiate(data);
+    //       }
+    //     })
+    //   }
+    //   else{
+    //     this.recordtoupdate = res;
+    //      this.checkedit(this.recordtoupdate);
+    //   }
+    // })
+
+    this._CourseContentService.insertnewcoursecontent.subscribe((data) => {
+      if( data == null){
+          this._CourseContentService.coursecontent.subscribe((res) => {
+            if( res == null){
+              this.initiate();
+            }else{
+              this.recordtoupdate = res;
+              this.checkedit(this.recordtoupdate);
+            }
+          })
+      }else{
+        this.initiate(data);
       }
     })
 
@@ -73,15 +88,14 @@ subSubjectid:number;
 
   initiate(data?: any){
     this.CourseLectureForm = this._FormBuilder.group({
+      teacherId: ['', Validators.required],
+      subjectId: [data?.subjectId || '', Validators.required],
       subjectContentName: ['', Validators.required],
+      description: ['', Validators.required],
       price: ['', Validators.required],
+      videoURL: ['', Validators.required],
       subSubjectId: [data?.subSubjectId || '', Validators.required],
       beforSubjectContentId: [data?.beforSubjectContentId || '', Validators.required],
-      videoURL: ['', Validators.required],
-      teacherId: ['', Validators.required],
-      description: ['', Validators.required],
-      subjectContentImage: ['', Validators.required],
-      subjectId: [data?.subjectId || '', Validators.required]
     });
   }
   checkedit(data:any){

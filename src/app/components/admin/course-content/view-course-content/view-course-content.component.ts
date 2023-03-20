@@ -56,13 +56,6 @@ delete(id : number){
           title: 'خطأ',
           text:err.error.message    
         })
-        this.getcoursecontent();
-        // Swal.fire({
-        //   icon: "success",
-        //   title: "تم المسح بنجاح",
-        //   showConfirmButton: false,
-        //   timer: 1500,
-        // });
      this.getcoursecontent();
       },() => {
         console.log("completed");

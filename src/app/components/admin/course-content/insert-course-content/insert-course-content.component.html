@@ -102,13 +102,10 @@
                                     <ng-option *ngFor="let item of teachers" [value]="item.teacherId" >{{item.teacherName}}</ng-option>
                                 </ng-select>
                             </div>
-                            <div class="col-lg-6 col-sm-12  mb-3">
-
-                            </div>
                         <!-- to insert image for the student  -->
-              <div class="col-6 my-4" style="padding: 1%;">
+              <div class="col-lg-6 my-4" style="padding: 1%;">
                 <img  src="{{ imageLogo }}" style="width: 60%; height: 220px;" class="image-style p-2" *ngIf="imageLogo != null"/>
-               <input type="file" formControlName="subjectContentImage" accept="image/*" #file id="getLogo"
+               <input type="file" accept="image/*" #file id="getLogo"
                 style="display: none" (change)="getLogoUrl($event)" />
             <button type="button" onclick="document.getElementById('getLogo').click()"
                 class="btn  d-block"  style="width: 60%;">

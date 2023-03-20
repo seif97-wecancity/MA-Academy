@@ -28,9 +28,10 @@ gender:String []= [ 'ذكر', 'انثى'];
       name: ['', Validators.required],
       password: ['', Validators.required],
       phone: ['', [Validators.required, Validators.pattern(`^01[0125]{1}[0-9]{8}`)]],
-      email: ['', [Validators.required,Validators.email]],
+      email: ['', [Validators.required,Validators.pattern(`^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$`)]],
       gender: ['', Validators.required],
-      location: ['', Validators.required]
+      location: ['', Validators.required],
+      role: ['admin', Validators.required]
     });
   }
   get fc(){

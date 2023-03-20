@@ -29,7 +29,9 @@
                                         <th scope="col">اسم محتوى المادة</th>
                                         <th scope="col">السعر</th>
                                         <th scope="col">رابط الفيديو التعليمي</th>
-                                        <!-- <th scope="col">التفاصيل</th> -->
+                                        <th scope="col">اسم تصنيف المادة </th>
+                                        <th scope="col">اسم تصنيف محتوى المادة</th>
+                                        <th scope="col">اسم المادة</th>
                                              
                                         <th scope="col"></th>
                                     </tr>
@@ -40,7 +42,9 @@
                                         <td scope="row" class="p-2">{{view.subjectContentName}}</td>
                                         <td scope="row" class="p-2">{{view.price}}</td>
                                         <td scope="row" class="p-2"><a [href]="view.video_url">{{view.video_url}}</a></td>
-                                        <!-- <td scope="row" class="p-2">{{view.description}}</td> -->
+                                        <td scope="row" class="p-2">{{view.subSubjectName}}</td>
+                                        <td scope="row" class="p-2">{{view.beforSubjectContentName}}</td>
+                                        <td scope="row" class="p-2">{{view.subjectName}}</td>
                                         
                                         
                                             <td class="font-style chose">
@@ -50,11 +54,9 @@
                                                     <i class="fa fa-pencil"></i>
                                                 </button>
                                                    <button class="btn  pull-right"  style="color: red; padding: 7px"
-                                                   (click)="delete(view.id)">
+                                                   (click)="delete(view.subjectContentId)">
                                                     <i class="fa fa-trash"></i>
                                                        </button>
-                                                
-                                            
                                             </td>
                                         </tr>
                                 </tbody>

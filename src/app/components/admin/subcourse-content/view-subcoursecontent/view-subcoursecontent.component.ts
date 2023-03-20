@@ -27,7 +27,7 @@ export class ViewSubcoursecontentComponent implements OnInit {
   }
 
   addcontent(data:any){
-    this._CourseContentService.coursecontent.next(data);
+    this._CourseContentService.insertnewcoursecontent.next(data);
     this._Router.navigate(['content/admin/InsertCourseLecture']);
   }
   delete(id : number){

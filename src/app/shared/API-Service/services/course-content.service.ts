@@ -17,12 +17,12 @@ export class CourseContentService {
     return this._HttpClient.get(`${environment.Server_URL}/listSubjectContent`);
   }
 
-  CreateCourseContent(data : object):Observable<any>{
+  CreateCourseContent(data : any):Observable<any>{
    return this._HttpClient.post(`${environment.Server_URL}/addSubjectContent`, data);
   }
 
-  UpdateCourseContent(data : object,id : number):Observable<any>{
-   return this._HttpClient.put(`${environment.Server_URL}/updateSubjectContent/${id}?`, data);
+  UpdateCourseContent(data : any,id : number):Observable<any>{
+   return this._HttpClient.put(`${environment.Server_URL}/updateSubjectContent/${id}`, data);
   }
 
   DeleteCourseContent(id:number):Observable<any>{
