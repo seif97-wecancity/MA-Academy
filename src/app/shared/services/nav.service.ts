@@ -125,32 +125,6 @@ export class NavService implements OnDestroy {
       ],
     },
     {
-      title: "المدرسين",
-      icon: "user",
-      type: "sub",
-      badgeType: "success",
-      children: [
-        {
-          path: "admin/ViewTeachers",
-          title: "ادارة المدرسين",
-          type: "link",
-        },
-      ],
-    },
-    {
-      title: "الطلاب",
-      icon: "user",
-      type: "sub",
-      badgeType: "success",
-      children: [
-        {
-          path: "admin/ViewStudents",
-          title: "ادارة الطلاب",
-          type: "link",
-        },
-      ],
-    },
-    {
       title: "تصنيفات المواد",
       icon: "book-open",
       type: "sub",
@@ -190,14 +164,40 @@ export class NavService implements OnDestroy {
       ],
     },
     {
-      title: "المستخدمين",
+      title: "الطلاب",
+      icon: "user",
+      type: "sub",
+      badgeType: "success",
+      children: [
+        {
+          path: "admin/ViewStudents",
+          title: "ادارة الطلاب",
+          type: "link",
+        },
+      ],
+    },
+    {
+      title: "المدرسين",
+      icon: "user",
+      type: "sub",
+      badgeType: "success",
+      children: [
+        {
+          path: "admin/ViewTeachers",
+          title: "ادارة المدرسين",
+          type: "link",
+        },
+      ],
+    },
+    {
+      title: "المسؤولين",
       icon: "user-plus",
       type: "sub",
       badgeType: "success",
       children: [
         {
           path: "admin/ViewUser",
-          title: "ادارة المستخدمين",
+          title: "ادارة المسؤولين",
           type: "link",
         },
       ],
