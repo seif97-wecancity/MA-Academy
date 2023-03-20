@@ -23,6 +23,7 @@ subsubjects:any [];
   getsubsubjects(){
     this._SubcourseService.GetSubCourse().subscribe((res) => {
       this.subsubjects = res.data;
+      debugger
     })
   }
   delete(id : number){

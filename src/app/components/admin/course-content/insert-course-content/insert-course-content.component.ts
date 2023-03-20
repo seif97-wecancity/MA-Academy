@@ -83,6 +83,7 @@ subSubjectid:number;
     });
      this._SubcoursecontentService.GetSubjectContent().subscribe((res) => {
       this.beforSubjectContent = res.data;
+      debugger
      }) 
   }
 

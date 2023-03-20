@@ -63,6 +63,7 @@ data:any [];
       teacherName: ['', Validators.required],
       educationId: ['', Validators.required],
       subjectId: ['', Validators.required],
+      role: ['teacher', Validators.required],
      
     });
   }
@@ -70,22 +71,10 @@ data:any [];
     this.TeacherForm = this._FormBuilder.group({
       teacherName: [data.teacherName, Validators.required],
       educationId: [data.educationId, Validators.required],
-      subjectId: [data.subjectId, Validators.required],
+      subjectId: [data.subjectId, Validators.required]
     });
   }
-    // imgFile
-    getLogoUrl(event: any) {
-      const reader = new FileReader();
-      if (event.target.files && event.target.files.length) {
-        const [file] = event.target.files;
-        this.Image = event.target.files[0];
-        reader.readAsDataURL(file);
-        reader.onload = () => {
-          this.imageLogo = reader.result as string;
-          // this.logoForm?.append("image", this.Image);
-        };
-      }
-    }
+    
   get fc() {
     return this.TeacherForm.controls;
   }
